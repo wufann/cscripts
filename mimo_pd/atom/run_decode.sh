@@ -2,8 +2,9 @@
 # Decode 节点 (kv_consumer) — MiMo-V2-Flash TP4, GPU 4-7
 set -e
 
-MODEL=${MODEL:-/data/MiMo-V2-Flash}
-LOCAL_IP=${LOCAL_IP:-$(ip addr show | grep "inet " | grep -v 127.0.0.1 | awk '{print $2}' | cut -d/ -f1 | head -1)}
+MODEL=${MODEL:-/it-share/models/MiMo-V2-Flash}
+#LOCAL_IP=${LOCAL_IP:-$(ip addr show | grep "inet " | grep -v 127.0.0.1 | awk '{print $2}' | cut -d/ -f1 | head -1)}
+export LOCAL_IP=$(hostname -I | awk '{print $1}')
 PROXY_IP=${PROXY_IP:-${LOCAL_IP}}
 PROXY_PING_PORT=${PROXY_PING_PORT:-36367}
 HTTP_PORT=${HTTP_PORT:-8004}

@@ -1,2 +1,2 @@
 # docker 
-rocm/atom-dev:latest
+bash run_docker_pd.sh
