@@ -1,0 +1,2012 @@
+[atom 09:42:28] Loading tokenizer from /it-share/models/MiMo-V2.5-Pro...
+/opt/venv/lib/python3.12/site-packages/transformers/modeling_rope_utils.py:936: FutureWarning: `rope_config_validation` is deprecated and has been removed. Its functionality has been moved to RotaryEmbeddingConfigMixin.validate_rope method. PreTrainedConfig inherits this class, so please call self.validate_rope() instead. Also, make sure to use the new rope_parameters syntax. You can call self.standardize_rope_params() in the meantime.
+  warnings.warn(
+[atom 09:42:29] Initializing engine with model /it-share/models/MiMo-V2.5-Pro...
+[atom 09:42:29] hf config is: MiMoV2Config {
+  "add_full_attention_sink_bias": false,
+  "add_swa_attention_sink_bias": true,
+  "architectures": [
+    "MiMoV2FlashMTPModel"
+  ],
+  "attention_bias": false,
+  "attention_chunk_size": 128,
+  "attention_dropout": 0.0,
+  "attention_projection_layout": "fused_qkv",
+  "attention_value_scale": 0.612,
+  "auto_map": {
+    "AutoConfig": "configuration_mimo_v2.MiMoV2Config",
+    "AutoModel": "modeling_mimo_v2.MiMoV2Model",
+    "AutoModelForCausalLM": "modeling_mimo_v2.MiMoV2ForCausalLM"
+  },
+  "dtype": "bfloat16",
+  "head_dim": 192,
+  "hidden_act": "silu",
+  "hidden_size": 6144,
+  "hybrid_block_size": null,
+  "hybrid_layer_pattern": [
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0
+  ],
+  "initializer_range": 0.02,
+  "intermediate_size": 16384,
+  "layernorm_epsilon": 1e-05,
+  "max_position_embeddings": 1048576,
+  "model_type": "mimo_v2",
+  "moe_intermediate_size": 2048,
+  "moe_layer_freq": [
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+  ],
+  "n_group": 1,
+  "n_predict": 3,
+  "n_routed_experts": 384,
+  "n_shared_experts": null,
+  "norm_topk_prob": true,
+  "num_attention_heads": 128,
+  "num_experts_per_tok": 8,
+  "num_hidden_layers": 70,
+  "num_key_value_heads": 8,
+  "num_nextn_predict_layers": 3,
+  "partial_rotary_factor": 0.334,
+  "quantization_config": {
+    "activation_scheme": "dynamic",
+    "fmt": "e4m3",
+    "ignored_layers": [
+      "model.layers.0.self_attn.o_proj",
+      "model.layers.1.self_attn.o_proj",
+      "model.layers.2.self_attn.o_proj",
+      "model.layers.3.self_attn.o_proj",
+      "model.layers.4.self_attn.o_proj",
+      "model.layers.5.self_attn.o_proj",
+      "model.layers.6.self_attn.o_proj",
+      "model.layers.7.self_attn.o_proj",
+      "model.layers.8.self_attn.o_proj",
+      "model.layers.9.self_attn.o_proj",
+      "model.layers.10.self_attn.o_proj",
+      "model.layers.11.self_attn.o_proj",
+      "model.layers.12.self_attn.o_proj",
+      "model.layers.13.self_attn.o_proj",
+      "model.layers.14.self_attn.o_proj",
+      "model.layers.15.self_attn.o_proj",
+      "model.layers.16.self_attn.o_proj",
+      "model.layers.17.self_attn.o_proj",
+      "model.layers.18.self_attn.o_proj",
+      "model.layers.19.self_attn.o_proj",
+      "model.layers.20.self_attn.o_proj",
+      "model.layers.21.self_attn.o_proj",
+      "model.layers.22.self_attn.o_proj",
+      "model.layers.23.self_attn.o_proj",
+      "model.layers.24.self_attn.o_proj",
+      "model.layers.25.self_attn.o_proj",
+      "model.layers.26.self_attn.o_proj",
+      "model.layers.27.self_attn.o_proj",
+      "model.layers.28.self_attn.o_proj",
+      "model.layers.29.self_attn.o_proj",
+      "model.layers.30.self_attn.o_proj",
+      "model.layers.31.self_attn.o_proj",
+      "model.layers.32.self_attn.o_proj",
+      "model.layers.33.self_attn.o_proj",
+      "model.layers.34.self_attn.o_proj",
+      "model.layers.35.self_attn.o_proj",
+      "model.layers.36.self_attn.o_proj",
+      "model.layers.37.self_attn.o_proj",
+      "model.layers.38.self_attn.o_proj",
+      "model.layers.39.self_attn.o_proj",
+      "model.layers.40.self_attn.o_proj",
+      "model.layers.41.self_attn.o_proj",
+      "model.layers.42.self_attn.o_proj",
+      "model.layers.43.self_attn.o_proj",
+      "model.layers.44.self_attn.o_proj",
+      "model.layers.45.self_attn.o_proj",
+      "model.layers.46.self_attn.o_proj",
+      "model.layers.47.self_attn.o_proj",
+      "model.layers.48.self_attn.o_proj",
+      "model.layers.49.self_attn.o_proj",
+      "model.layers.50.self_attn.o_proj",
+      "model.layers.51.self_attn.o_proj",
+      "model.layers.52.self_attn.o_proj",
+      "model.layers.53.self_attn.o_proj",
+      "model.layers.54.self_attn.o_proj",
+      "model.layers.55.self_attn.o_proj",
+      "model.layers.56.self_attn.o_proj",
+      "model.layers.57.self_attn.o_proj",
+      "model.layers.58.self_attn.o_proj",
+      "model.layers.59.self_attn.o_proj",
+      "model.layers.60.self_attn.o_proj",
+      "model.layers.61.self_attn.o_proj",
+      "model.layers.62.self_attn.o_proj",
+      "model.layers.63.self_attn.o_proj",
+      "model.layers.64.self_attn.o_proj",
+      "model.layers.65.self_attn.o_proj",
+      "model.layers.66.self_attn.o_proj",
+      "model.layers.67.self_attn.o_proj",
+      "model.layers.68.self_attn.o_proj",
+      "model.layers.69.self_attn.o_proj",
+      "model.decoder.self_attn.o_proj"
+    ],
+    "quant_method": "fp8",
+    "weight_block_size": [
+      128,
+      128
+    ]
+  },
+  "rope_parameters": {
+    "partial_rotary_factor": 0.334,
+    "rope_theta": 10000000,
+    "rope_type": "default"
+  },
+  "rope_theta": 10000000,
+  "routed_scaling_factor": null,
+  "scoring_func": "sigmoid",
+  "sliding_window": 128,
+  "sliding_window_size": 128,
+  "swa_head_dim": 192,
+  "swa_num_attention_heads": 128,
+  "swa_num_key_value_heads": 8,
+  "swa_rope_theta": 10000,
+  "swa_v_head_dim": 128,
+  "tie_word_embeddings": false,
+  "topk_group": 1,
+  "topk_method": "noaux_tc",
+  "transformers_version": "5.2.0",
+  "use_cache": true,
+  "v_head_dim": 128,
+  "vocab_size": 152576
+}
+
+[atom 09:42:29] Engine kwargs: {'trust_remote_code': True, 'tensor_parallel_size': 8, 'data_parallel_size': 1, 'enforce_eager': False, 'enable_prefix_caching': True, 'port': 8006, 'kv_cache_dtype': 'fp8', 'max_model_len': None, 'max_num_batched_tokens': 16384, 'scheduler_delay_factor': 0.0, 'max_num_seqs': 512, 'gpu_memory_utilization': 0.9, 'load_dummy': False, 'enable_expert_parallel': False, 'torch_profiler_dir': None, 'enable_dp_attention': False, 'kv_transfer_config': '{\n    "kv_role": "kv_consumer",\n    "kv_connector": "mooncake",\n    "proxy_ip": "10.24.112.181",\n    "proxy_ping_port": 36367,\n    "http_port": 8004\n  }', 'mark_trace': False, 'online_quant_config': None, 'kv_cache_block_size': 16, 'compilation_config': CompilationConfig(level=3, use_cudagraph=True, local_cache_dir=None, cudagraph_capture_sizes=[1, 2, 4, 8, 16, 32, 48, 64, 128, 256, 512], cuda_graph_sizes=[512], debug_dump_path='', traced_files=set(), cache_dir='', use_inductor=True, cudagraph_mode=None, compilation_time=0.0, splitting_ops=None, cudagraph_copy_inputs=False, inductor_compile_config={}, compile_sizes=None, static_forward_context={}), 'speculative_config': SpeculativeConfig(method='mtp', num_spec_tokens=1), 'enable_tbo': False, 'enable_tbo_decode': False, 'enable_low_latency': False}
+`torch_dtype` is deprecated! Use `dtype` instead!
+[atom 09:42:29] Engine Core Mgr: Creating EngineCore for DP rank 0/1
+[atom 09:42:29] Creating EngineCore process: DP rank 0, will use GPUs 0 to 7
+[atom 09:42:29] Engine Core Mgr: Starting EngineCore for DP rank 0/1
+[atom 09:42:37] Use MLAAttentionImplDecoratorForPluginMode to decorate MLAAttention
+[atom 09:42:37] Use MLASparseAttentionImplDecoratorForPluginMode to decorate MLAAttention
+[atom 09:42:37] Use PagedAttentionImplDecoratorForPluginMode to decorate PagedAttentionImpl
+[atom 09:42:37] Create lazy wrapper for FusedMoE to change the naming
+[atom 09:42:37] ModelRunner rank=2, dp_rank_local=0, local_device_rank=2, device=cuda:2
+[atom 09:42:38] Use MLAAttentionImplDecoratorForPluginMode to decorate MLAAttention
+[atom 09:42:38] Use MLASparseAttentionImplDecoratorForPluginMode to decorate MLAAttention
+[atom 09:42:38] Use MLAAttentionImplDecoratorForPluginMode to decorate MLAAttention
+[atom 09:42:38] Use MLASparseAttentionImplDecoratorForPluginMode to decorate MLAAttention
+[atom 09:42:38] Use PagedAttentionImplDecoratorForPluginMode to decorate PagedAttentionImpl
+[atom 09:42:38] Create lazy wrapper for FusedMoE to change the naming
+[atom 09:42:38] Use PagedAttentionImplDecoratorForPluginMode to decorate PagedAttentionImpl
+[atom 09:42:38] ModelRunner rank=3, dp_rank_local=0, local_device_rank=3, device=cuda:3
+[atom 09:42:38] Create lazy wrapper for FusedMoE to change the naming
+[atom 09:42:38] ModelRunner rank=1, dp_rank_local=0, local_device_rank=1, device=cuda:1
+[atom 09:42:38] Use MLAAttentionImplDecoratorForPluginMode to decorate MLAAttention
+[atom 09:42:38] Use MLASparseAttentionImplDecoratorForPluginMode to decorate MLAAttention
+[atom 09:42:38] Use MLAAttentionImplDecoratorForPluginMode to decorate MLAAttention
+[atom 09:42:38] Use MLASparseAttentionImplDecoratorForPluginMode to decorate MLAAttention
+[atom 09:42:38] Use PagedAttentionImplDecoratorForPluginMode to decorate PagedAttentionImpl
+[atom 09:42:38] Use PagedAttentionImplDecoratorForPluginMode to decorate PagedAttentionImpl
+[atom 09:42:38] Create lazy wrapper for FusedMoE to change the naming
+[atom 09:42:38] ModelRunner rank=7, dp_rank_local=0, local_device_rank=7, device=cuda:7
+[atom 09:42:38] Create lazy wrapper for FusedMoE to change the naming
+[atom 09:42:38] ModelRunner rank=5, dp_rank_local=0, local_device_rank=5, device=cuda:5
+[atom 09:42:38] Use MLAAttentionImplDecoratorForPluginMode to decorate MLAAttention
+[atom 09:42:38] Use MLASparseAttentionImplDecoratorForPluginMode to decorate MLAAttention
+[atom 09:42:38] Use MLAAttentionImplDecoratorForPluginMode to decorate MLAAttention
+[atom 09:42:38] Use MLASparseAttentionImplDecoratorForPluginMode to decorate MLAAttention
+[atom 09:42:38] Use MLAAttentionImplDecoratorForPluginMode to decorate MLAAttention
+[atom 09:42:38] Use MLASparseAttentionImplDecoratorForPluginMode to decorate MLAAttention
+[atom 09:42:38] Use PagedAttentionImplDecoratorForPluginMode to decorate PagedAttentionImpl
+[atom 09:42:38] Use PagedAttentionImplDecoratorForPluginMode to decorate PagedAttentionImpl
+[atom 09:42:38] Use PagedAttentionImplDecoratorForPluginMode to decorate PagedAttentionImpl
+[atom 09:42:38] Create lazy wrapper for FusedMoE to change the naming
+[atom 09:42:38] Create lazy wrapper for FusedMoE to change the naming
+[atom 09:42:38] Create lazy wrapper for FusedMoE to change the naming
+[atom 09:42:38] ModelRunner rank=6, dp_rank_local=0, local_device_rank=6, device=cuda:6
+[atom 09:42:38] ModelRunner rank=0, dp_rank_local=0, local_device_rank=0, device=cuda:0
+[atom 09:42:38] ModelRunner rank=4, dp_rank_local=0, local_device_rank=4, device=cuda:4
+[Gloo] Rank 7 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 3 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 1 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 0 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 2 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 4 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 6 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 5 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 1 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 0 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 4 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 2 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 6 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 3 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 7 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 5 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 1 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 2 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 4 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 3 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 7 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 6 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 5 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[atom 09:42:53] disable_mmap: True
+[atom 09:42:53] disable_mmap: True
+[atom 09:42:53] disable_mmap: True
+[atom 09:42:53] disable_mmap: True
+[atom 09:42:53] disable_mmap: True
+[atom 09:42:53] disable_mmap: True
+[atom 09:42:53] disable_mmap: True
+Loading safetensors shards[/it-share/models/MiMo-V2.5-Pro]:   0%|          | 0/34 [00:00<?, ?it/s][atom 09:42:53] disable_mmap: True
+Loading safetensors shards[/it-share/models/MiMo-V2.5-Pro]:   3%|▎         | 1/34 [00:15<08:16, 15.06s/it]Loading safetensors shards[/it-share/models/MiMo-V2.5-Pro]:   6%|▌         | 2/34 [00:35<09:36, 18.01s/it]Loading safetensors shards[/it-share/models/MiMo-V2.5-Pro]:   9%|▉         | 3/34 [00:51<08:56, 17.31s/it]Loading safetensors shards[/it-share/models/MiMo-V2.5-Pro]:  12%|█▏        | 4/34 [01:05<07:57, 15.91s/it]Loading safetensors shards[/it-share/models/MiMo-V2.5-Pro]:  15%|█▍        | 5/34 [01:16<06:46, 14.01s/it]Loading safetensors shards[/it-share/models/MiMo-V2.5-Pro]:  18%|█▊        | 6/34 [01:34<07:14, 15.52s/it]Loading safetensors shards[/it-share/models/MiMo-V2.5-Pro]:  21%|██        | 7/34 [01:52<07:22, 16.39s/it]Loading safetensors shards[/it-share/models/MiMo-V2.5-Pro]:  24%|██▎       | 8/34 [02:10<07:14, 16.70s/it]Loading safetensors shards[/it-share/models/MiMo-V2.5-Pro]:  26%|██▋       | 9/34 [02:28<07:09, 17.19s/it]Loading safetensors shards[/it-share/models/MiMo-V2.5-Pro]:  29%|██▉       | 10/34 [02:46<07:02, 17.59s/it]Loading safetensors shards[/it-share/models/MiMo-V2.5-Pro]:  32%|███▏      | 11/34 [03:00<06:15, 16.31s/it]Loading safetensors shards[/it-share/models/MiMo-V2.5-Pro]:  35%|███▌      | 12/34 [03:16<06:00, 16.40s/it]Loading safetensors shards[/it-share/models/MiMo-V2.5-Pro]:  38%|███▊      | 13/34 [03:34<05:55, 16.93s/it]Loading safetensors shards[/it-share/models/MiMo-V2.5-Pro]:  41%|████      | 14/34 [03:52<05:41, 17.06s/it]Loading safetensors shards[/it-share/models/MiMo-V2.5-Pro]:  44%|████▍     | 15/34 [04:10<05:30, 17.39s/it]Loading safetensors shards[/it-share/models/MiMo-V2.5-Pro]:  47%|████▋     | 16/34 [04:27<05:11, 17.33s/it]Loading safetensors shards[/it-share/models/MiMo-V2.5-Pro]:  50%|█████     | 17/34 [04:43<04:44, 16.75s/it]Loading safetensors shards[/it-share/models/MiMo-V2.5-Pro]:  53%|█████▎    | 18/34 [05:00<04:30, 16.88s/it]Loading safetensors shards[/it-share/models/MiMo-V2.5-Pro]:  56%|█████▌    | 19/34 [05:16<04:08, 16.56s/it]Loading safetensors shards[/it-share/models/MiMo-V2.5-Pro]:  59%|█████▉    | 20/34 [05:33<03:54, 16.76s/it]Loading safetensors shards[/it-share/models/MiMo-V2.5-Pro]:  62%|██████▏   | 21/34 [05:48<03:32, 16.32s/it]Loading safetensors shards[/it-share/models/MiMo-V2.5-Pro]:  65%|██████▍   | 22/34 [06:06<03:21, 16.80s/it]Loading safetensors shards[/it-share/models/MiMo-V2.5-Pro]:  68%|██████▊   | 23/34 [06:23<03:06, 16.92s/it]Loading safetensors shards[/it-share/models/MiMo-V2.5-Pro]:  71%|███████   | 24/34 [06:40<02:49, 16.98s/it]Loading safetensors shards[/it-share/models/MiMo-V2.5-Pro]:  74%|███████▎  | 25/34 [06:57<02:32, 16.90s/it]Loading safetensors shards[/it-share/models/MiMo-V2.5-Pro]:  76%|███████▋  | 26/34 [07:14<02:14, 16.79s/it]Loading safetensors shards[/it-share/models/MiMo-V2.5-Pro]:  79%|███████▉  | 27/34 [07:26<01:49, 15.61s/it]Loading safetensors shards[/it-share/models/MiMo-V2.5-Pro]:  82%|████████▏ | 28/34 [07:43<01:35, 15.93s/it]Loading safetensors shards[/it-share/models/MiMo-V2.5-Pro]:  85%|████████▌ | 29/34 [07:58<01:18, 15.66s/it]Loading safetensors shards[/it-share/models/MiMo-V2.5-Pro]:  88%|████████▊ | 30/34 [07:59<00:45, 11.26s/it]Loading safetensors shards[/it-share/models/MiMo-V2.5-Pro]:  91%|█████████ | 31/34 [08:18<00:40, 13.56s/it]Loading safetensors shards[/it-share/models/MiMo-V2.5-Pro]:  94%|█████████▍| 32/34 [08:32<00:27, 13.69s/it]Loading safetensors shards[/it-share/models/MiMo-V2.5-Pro]:  97%|█████████▋| 33/34 [08:52<00:15, 15.61s/it]Loading safetensors shards[/it-share/models/MiMo-V2.5-Pro]: 100%|██████████| 34/34 [09:09<00:00, 16.12s/it]Loading safetensors shards[/it-share/models/MiMo-V2.5-Pro]: 100%|██████████| 34/34 [09:09<00:00, 16.17s/it]
+[atom 09:52:11] Model load done: /it-share/models/MiMo-V2.5-Pro
+[atom 09:52:12] Loading drafter model...
+[atom 09:52:12] disable_mmap: True
+Loading safetensors shards[/it-share/models/MiMo-V2.5-Pro]:   0%|          | 0/34 [00:00<?, ?it/s][atom 09:52:17] Model load done: /it-share/models/MiMo-V2.5-Pro
+[atom 09:52:17] Loading drafter model...
+[atom 09:52:17] disable_mmap: True
+[atom 09:52:26] Model load done: /it-share/models/MiMo-V2.5-Pro
+[atom 09:52:26] Loading drafter model...
+[atom 09:52:26] disable_mmap: True
+Loading safetensors shards[/it-share/models/MiMo-V2.5-Pro]:   3%|▎         | 1/34 [00:15<08:30, 15.46s/it][atom 09:52:32] Model load done: /it-share/models/MiMo-V2.5-Pro
+[atom 09:52:32] Model load done: /it-share/models/MiMo-V2.5-Pro
+[atom 09:52:32] Loading drafter model...
+[atom 09:52:32] disable_mmap: True
+[atom 09:52:32] Loading drafter model...
+[atom 09:52:32] disable_mmap: True
+[atom 09:52:34] Model load done: /it-share/models/MiMo-V2.5-Pro
+[atom 09:52:34] Loading drafter model...
+[atom 09:52:34] disable_mmap: True
+Loading safetensors shards[/it-share/models/MiMo-V2.5-Pro]:   6%|▌         | 2/34 [00:29<07:46, 14.59s/it][atom 09:52:43] Model load done: /it-share/models/MiMo-V2.5-Pro
+[atom 09:52:44] Loading drafter model...
+[atom 09:52:44] disable_mmap: True
+[atom 09:52:50] Model load done: /it-share/models/MiMo-V2.5-Pro
+[atom 09:52:50] Loading drafter model...
+[atom 09:52:50] disable_mmap: True
+Loading safetensors shards[/it-share/models/MiMo-V2.5-Pro]:   9%|▉         | 3/34 [00:40<06:43, 13.01s/it]Loading safetensors shards[/it-share/models/MiMo-V2.5-Pro]:  12%|█▏        | 4/34 [00:49<05:39, 11.31s/it]Loading safetensors shards[/it-share/models/MiMo-V2.5-Pro]:  15%|█▍        | 5/34 [00:59<05:19, 11.01s/it]Loading safetensors shards[/it-share/models/MiMo-V2.5-Pro]:  18%|█▊        | 6/34 [01:11<05:11, 11.14s/it]Loading safetensors shards[/it-share/models/MiMo-V2.5-Pro]:  21%|██        | 7/34 [01:21<04:57, 11.02s/it]Loading safetensors shards[/it-share/models/MiMo-V2.5-Pro]:  24%|██▎       | 8/34 [01:32<04:47, 11.04s/it]Loading safetensors shards[/it-share/models/MiMo-V2.5-Pro]:  26%|██▋       | 9/34 [01:44<04:35, 11.03s/it]Loading safetensors shards[/it-share/models/MiMo-V2.5-Pro]:  29%|██▉       | 10/34 [01:54<04:23, 10.98s/it]Loading safetensors shards[/it-share/models/MiMo-V2.5-Pro]:  32%|███▏      | 11/34 [02:05<04:12, 10.97s/it]Loading safetensors shards[/it-share/models/MiMo-V2.5-Pro]:  35%|███▌      | 12/34 [02:17<04:03, 11.07s/it]Loading safetensors shards[/it-share/models/MiMo-V2.5-Pro]:  38%|███▊      | 13/34 [02:27<03:46, 10.80s/it]Loading safetensors shards[/it-share/models/MiMo-V2.5-Pro]:  41%|████      | 14/34 [02:38<03:37, 10.90s/it]Loading safetensors shards[/it-share/models/MiMo-V2.5-Pro]:  44%|████▍     | 15/34 [02:49<03:25, 10.80s/it]Loading safetensors shards[/it-share/models/MiMo-V2.5-Pro]:  47%|████▋     | 16/34 [02:59<03:13, 10.77s/it]Loading safetensors shards[/it-share/models/MiMo-V2.5-Pro]:  50%|█████     | 17/34 [03:10<03:01, 10.65s/it]Loading safetensors shards[/it-share/models/MiMo-V2.5-Pro]:  53%|█████▎    | 18/34 [03:20<02:50, 10.66s/it]Loading safetensors shards[/it-share/models/MiMo-V2.5-Pro]:  56%|█████▌    | 19/34 [03:31<02:38, 10.59s/it]Loading safetensors shards[/it-share/models/MiMo-V2.5-Pro]:  59%|█████▉    | 20/34 [03:42<02:30, 10.74s/it]Loading safetensors shards[/it-share/models/MiMo-V2.5-Pro]:  62%|██████▏   | 21/34 [03:53<02:19, 10.76s/it]Loading safetensors shards[/it-share/models/MiMo-V2.5-Pro]:  65%|██████▍   | 22/34 [04:04<02:10, 10.91s/it]Loading safetensors shards[/it-share/models/MiMo-V2.5-Pro]:  68%|██████▊   | 23/34 [04:14<01:58, 10.79s/it]Loading safetensors shards[/it-share/models/MiMo-V2.5-Pro]:  71%|███████   | 24/34 [04:26<01:49, 10.96s/it]Loading safetensors shards[/it-share/models/MiMo-V2.5-Pro]:  74%|███████▎  | 25/34 [04:36<01:36, 10.76s/it]Loading safetensors shards[/it-share/models/MiMo-V2.5-Pro]:  76%|███████▋  | 26/34 [04:47<01:27, 10.96s/it]Loading safetensors shards[/it-share/models/MiMo-V2.5-Pro]:  79%|███████▉  | 27/34 [04:58<01:15, 10.82s/it]Loading safetensors shards[/it-share/models/MiMo-V2.5-Pro]:  82%|████████▏ | 28/34 [05:09<01:05, 10.90s/it]Loading safetensors shards[/it-share/models/MiMo-V2.5-Pro]:  85%|████████▌ | 29/34 [05:20<00:55, 11.00s/it]Loading safetensors shards[/it-share/models/MiMo-V2.5-Pro]:  88%|████████▊ | 30/34 [05:21<00:31,  7.82s/it]Loading safetensors shards[/it-share/models/MiMo-V2.5-Pro]:  91%|█████████ | 31/34 [05:31<00:25,  8.61s/it]Loading safetensors shards[/it-share/models/MiMo-V2.5-Pro]:  94%|█████████▍| 32/34 [05:42<00:18,  9.30s/it][atom 09:58:00] Assuming the EAGLE head shares the same vocab embedding with the target model.
+[atom 09:58:00] Model Runner5/8: DP size=1 too large, warmup_max_tokens=16384 < max_model_len=1048576. Using 1 seq with length 16384 for warmup.
+[atom 09:58:02] Assuming the EAGLE head shares the same vocab embedding with the target model.
+[atom 09:58:02] Model Runner3/8: DP size=1 too large, warmup_max_tokens=16384 < max_model_len=1048576. Using 1 seq with length 16384 for warmup.
+Loading safetensors shards[/it-share/models/MiMo-V2.5-Pro]:  97%|█████████▋| 33/34 [05:53<00:09,  9.72s/it][atom 09:58:12] Using cache directory: /root/.cache/atom/torch_compile_cache/19c3f0cc78/rank_5/backbone for vLLM's torch.compile
+[atom 09:58:12] Dynamo bytecode transform time: 11.25 s
+[atom 09:58:12] Cache the graph for dynamic shape for later use
+[atom 09:58:13] Using cache directory: /root/.cache/atom/torch_compile_cache/19c3f0cc78/rank_3/backbone for vLLM's torch.compile
+[atom 09:58:13] Dynamo bytecode transform time: 11.62 s
+[atom 09:58:14] Cache the graph for dynamic shape for later use
+[atom 09:58:16] Assuming the EAGLE head shares the same vocab embedding with the target model.
+[atom 09:58:16] Model Runner2/8: DP size=1 too large, warmup_max_tokens=16384 < max_model_len=1048576. Using 1 seq with length 16384 for warmup.
+[atom 09:58:16] Compiling a graph for dynamic shape takes 3.84 s
+[atom 09:58:16] Computation graph saved to /root/.cache/atom/torch_compile_cache/19c3f0cc78/rank_5/backbone/computation_graph.py
+[atom 09:58:18] Compiling a graph for dynamic shape takes 3.92 s
+[atom 09:58:18] Computation graph saved to /root/.cache/atom/torch_compile_cache/19c3f0cc78/rank_3/backbone/computation_graph.py
+Loading safetensors shards[/it-share/models/MiMo-V2.5-Pro]: 100%|██████████| 34/34 [06:05<00:00, 10.53s/it]Loading safetensors shards[/it-share/models/MiMo-V2.5-Pro]: 100%|██████████| 34/34 [06:05<00:00, 10.75s/it]
+[atom 09:58:18] load_model: 32 checkpoint tensors were silently dropped because the rewritten name has no matching model parameter. This is a `weights_mapping` / `WeightsMapper` bug — real ckpt data is being thrown away. Fix the rewrite rule. First 20 (orig_ckpt_name → rewritten_name): [('model.mtp.layers.1.self_attn.qkv_proj.weight_scale_inv', 'model.layers.71.mtp_block.self_attn.qkqkv_proj.weight_scale'), ('model.mtp.layers.2.final_layernorm.weight', 'model.layers.72.final_layernorm.weight'), ('model.mtp.layers.2.pre_mlp_layernorm.weight', 'model.layers.72.mtp_block.post_attention_layernorm.weight'), ('model.mtp.layers.1.final_layernorm.weight', 'model.layers.71.final_layernorm.weight'), ('model.mtp.layers.2.mlp.down_proj.weight', 'model.layers.72.mtp_block.mlp.down_proj.weight'), ('model.mtp.layers.1.hnorm.weight', 'model.layers.71.hnorm.weight'), ('model.mtp.layers.1.mlp.gate_proj.weight', 'model.layers.71.mtp_block.mlp.gate_up_proj.weight'), ('model.mtp.layers.1.mlp.up_proj.weight', 'model.layers.71.mtp_block.mlp.gate_up_proj.weight'), ('model.mtp.layers.1.mlp.up_proj.weight_scale_inv', 'model.layers.71.mtp_block.mlp.gate_up_proj.weight_scale'), ('model.mtp.layers.2.mlp.gate_proj.weight_scale_inv', 'model.layers.72.mtp_block.mlp.gate_up_proj.weight_scale'), ('model.mtp.layers.2.self_attn.qkv_proj.weight_scale_inv', 'model.layers.72.mtp_block.self_attn.qkqkv_proj.weight_scale'), ('model.mtp.layers.2.enorm.weight', 'model.layers.72.enorm.weight'), ('model.mtp.layers.2.self_attn.qkv_proj.weight', 'model.layers.72.mtp_block.self_attn.qkqkv_proj.weight'), ('model.mtp.layers.2.self_attn.attention_sink_bias', 'model.layers.72.mtp_block.self_attn.attention_sink_bias'), ('model.mtp.layers.1.pre_mlp_layernorm.weight', 'model.layers.71.mtp_block.post_attention_layernorm.weight'), ('model.mtp.layers.2.mlp.gate_proj.weight', 'model.layers.72.mtp_block.mlp.gate_up_proj.weight'), ('model.mtp.layers.1.mlp.down_proj.weight_scale_inv', 'model.layers.71.mtp_block.mlp.down_proj.weight_scale'), ('model.mtp.layers.1.input_layernorm.weight', 'model.layers.71.mtp_block.input_layernorm.weight'), ('model.mtp.layers.1.self_attn.qkv_proj.weight', 'model.layers.71.mtp_block.self_attn.qkqkv_proj.weight'), ('model.mtp.layers.2.input_layernorm.weight', 'model.layers.72.mtp_block.input_layernorm.weight')]
+[aiter] [fused_moe] duplicate tuned rows after disabling act_type in /tmp/aiter_configs/tuned_fmoe.csv; keeping first match for 431 rows
+[atom 09:58:18] Assuming the EAGLE head shares the same vocab embedding with the target model.
+[atom 09:58:18] Model Runner0/8: DP size=1 too large, warmup_max_tokens=16384 < max_model_len=1048576. Using 1 seq with length 16384 for warmup.
+[aiter] [fused_moe] duplicate tuned rows after disabling act_type in /tmp/aiter_configs/tuned_fmoe.csv; keeping first match for 431 rows
+[atom 09:58:20] Assuming the EAGLE head shares the same vocab embedding with the target model.
+[atom 09:58:20] Model Runner7/8: DP size=1 too large, warmup_max_tokens=16384 < max_model_len=1048576. Using 1 seq with length 16384 for warmup.
+[atom 09:58:27] Using cache directory: /root/.cache/atom/torch_compile_cache/19c3f0cc78/rank_2/backbone for vLLM's torch.compile
+[atom 09:58:27] Dynamo bytecode transform time: 11.35 s
+[atom 09:58:27] Cache the graph for dynamic shape for later use
+[atom 09:58:30] Using cache directory: /root/.cache/atom/torch_compile_cache/19c3f0cc78/rank_0/backbone for vLLM's torch.compile
+[atom 09:58:30] Dynamo bytecode transform time: 11.31 s
+[atom 09:58:30] Cache the graph for dynamic shape for later use
+[atom 09:58:30] Assuming the EAGLE head shares the same vocab embedding with the target model.
+[atom 09:58:30] Model Runner1/8: DP size=1 too large, warmup_max_tokens=16384 < max_model_len=1048576. Using 1 seq with length 16384 for warmup.
+[atom 09:58:31] Compiling a graph for dynamic shape takes 3.63 s
+[atom 09:58:31] Computation graph saved to /root/.cache/atom/torch_compile_cache/19c3f0cc78/rank_2/backbone/computation_graph.py
+[atom 09:58:31] Using cache directory: /root/.cache/atom/torch_compile_cache/19c3f0cc78/rank_7/backbone for vLLM's torch.compile
+[atom 09:58:31] Dynamo bytecode transform time: 11.17 s
+[atom 09:58:32] Cache the graph for dynamic shape for later use
+[aiter] [fused_moe] duplicate tuned rows after disabling act_type in /tmp/aiter_configs/tuned_fmoe.csv; keeping first match for 431 rows
+[atom 09:58:34] Compiling a graph for dynamic shape takes 3.59 s
+[atom 09:58:34] Computation graph saved to /root/.cache/atom/torch_compile_cache/19c3f0cc78/rank_0/backbone/computation_graph.py
+[atom 09:58:35] Compiling a graph for dynamic shape takes 3.63 s
+[atom 09:58:35] Computation graph saved to /root/.cache/atom/torch_compile_cache/19c3f0cc78/rank_7/backbone/computation_graph.py
+[aiter] [fused_moe] duplicate tuned rows after disabling act_type in /tmp/aiter_configs/tuned_fmoe.csv; keeping first match for 431 rows
+[aiter] [fused_moe] duplicate tuned rows after disabling act_type in /tmp/aiter_configs/tuned_fmoe.csv; keeping first match for 431 rows
+[atom 09:58:41] Assuming the EAGLE head shares the same vocab embedding with the target model.
+[atom 09:58:41] Model Runner6/8: DP size=1 too large, warmup_max_tokens=16384 < max_model_len=1048576. Using 1 seq with length 16384 for warmup.
+[atom 09:58:41] Using cache directory: /root/.cache/atom/torch_compile_cache/19c3f0cc78/rank_1/backbone for vLLM's torch.compile
+[atom 09:58:41] Dynamo bytecode transform time: 10.78 s
+[atom 09:58:41] Cache the graph for dynamic shape for later use
+[atom 09:58:43] Assuming the EAGLE head shares the same vocab embedding with the target model.
+[atom 09:58:43] Model Runner4/8: DP size=1 too large, warmup_max_tokens=16384 < max_model_len=1048576. Using 1 seq with length 16384 for warmup.
+[atom 09:58:45] Compiling a graph for dynamic shape takes 3.65 s
+[atom 09:58:45] Computation graph saved to /root/.cache/atom/torch_compile_cache/19c3f0cc78/rank_1/backbone/computation_graph.py
+[aiter] [fused_moe] duplicate tuned rows after disabling act_type in /tmp/aiter_configs/tuned_fmoe.csv; keeping first match for 431 rows
+[atom 09:58:51] Using cache directory: /root/.cache/atom/torch_compile_cache/19c3f0cc78/rank_6/backbone for vLLM's torch.compile
+[atom 09:58:51] Dynamo bytecode transform time: 10.86 s
+[atom 09:58:52] Cache the graph for dynamic shape for later use
+[atom 09:58:54] Using cache directory: /root/.cache/atom/torch_compile_cache/19c3f0cc78/rank_4/backbone for vLLM's torch.compile
+[atom 09:58:54] Dynamo bytecode transform time: 10.88 s
+[atom 09:58:54] Cache the graph for dynamic shape for later use
+[atom 09:58:55] Compiling a graph for dynamic shape takes 3.49 s
+[atom 09:58:55] Computation graph saved to /root/.cache/atom/torch_compile_cache/19c3f0cc78/rank_6/backbone/computation_graph.py
+[atom 09:58:57] Compiling a graph for dynamic shape takes 3.47 s
+[atom 09:58:57] Computation graph saved to /root/.cache/atom/torch_compile_cache/19c3f0cc78/rank_4/backbone/computation_graph.py
+[aiter] [fused_moe] duplicate tuned rows after disabling act_type in /tmp/aiter_configs/tuned_fmoe.csv; keeping first match for 431 rows
+[aiter] [fused_moe] duplicate tuned rows after disabling act_type in /tmp/aiter_configs/tuned_fmoe.csv; keeping first match for 431 rows
+[atom 09:59:05] Using cache directory: /root/.cache/atom/torch_compile_cache/19c3f0cc78/rank_2/drafter for vLLM's torch.compile
+[atom 09:59:05] Dynamo bytecode transform time: 0.28 s
+[atom 09:59:05] Using cache directory: /root/.cache/atom/torch_compile_cache/19c3f0cc78/rank_6/drafter for vLLM's torch.compile
+[atom 09:59:05] Dynamo bytecode transform time: 0.29 s
+[atom 09:59:05] Using cache directory: /root/.cache/atom/torch_compile_cache/19c3f0cc78/rank_3/drafter for vLLM's torch.compile
+[atom 09:59:05] Dynamo bytecode transform time: 0.28 s
+[atom 09:59:05] Using cache directory: /root/.cache/atom/torch_compile_cache/19c3f0cc78/rank_4/drafter for vLLM's torch.compile
+[atom 09:59:05] Dynamo bytecode transform time: 0.28 s
+[atom 09:59:05] Using cache directory: /root/.cache/atom/torch_compile_cache/19c3f0cc78/rank_7/drafter for vLLM's torch.compile
+[atom 09:59:05] Dynamo bytecode transform time: 0.29 s
+[atom 09:59:05] Using cache directory: /root/.cache/atom/torch_compile_cache/19c3f0cc78/rank_0/drafter for vLLM's torch.compile
+[atom 09:59:05] Dynamo bytecode transform time: 0.28 s
+[atom 09:59:05] Using cache directory: /root/.cache/atom/torch_compile_cache/19c3f0cc78/rank_1/drafter for vLLM's torch.compile
+[atom 09:59:05] Dynamo bytecode transform time: 0.29 s
+[atom 09:59:05] Using cache directory: /root/.cache/atom/torch_compile_cache/19c3f0cc78/rank_5/drafter for vLLM's torch.compile
+[atom 09:59:05] Dynamo bytecode transform time: 0.29 s
+[atom 09:59:06] Cache the graph for dynamic shape for later use
+[atom 09:59:06] Cache the graph for dynamic shape for later use
+[atom 09:59:06] Cache the graph for dynamic shape for later use
+[atom 09:59:07] Cache the graph for dynamic shape for later use
+[atom 09:59:07] Cache the graph for dynamic shape for later use
+[atom 09:59:07] Cache the graph for dynamic shape for later use
+[atom 09:59:07] Cache the graph for dynamic shape for later use
+[atom 09:59:07] Cache the graph for dynamic shape for later use
+[atom 09:59:07] Compiling a graph for dynamic shape takes 1.41 s
+[atom 09:59:07] Computation graph saved to /root/.cache/atom/torch_compile_cache/19c3f0cc78/rank_3/drafter/computation_graph.py
+[atom 09:59:07] Compiling a graph for dynamic shape takes 1.71 s
+[atom 09:59:07] Computation graph saved to /root/.cache/atom/torch_compile_cache/19c3f0cc78/rank_2/drafter/computation_graph.py
+[atom 09:59:07] Compiling a graph for dynamic shape takes 1.72 s
+[atom 09:59:07] Computation graph saved to /root/.cache/atom/torch_compile_cache/19c3f0cc78/rank_4/drafter/computation_graph.py
+[atom 09:59:07] Compiling a graph for dynamic shape takes 1.76 s
+[atom 09:59:07] Computation graph saved to /root/.cache/atom/torch_compile_cache/19c3f0cc78/rank_6/drafter/computation_graph.py
+[atom 09:59:07] Compiling a graph for dynamic shape takes 1.76 s
+[atom 09:59:07] Computation graph saved to /root/.cache/atom/torch_compile_cache/19c3f0cc78/rank_0/drafter/computation_graph.py
+[atom 09:59:07] Compiling a graph for dynamic shape takes 1.78 s
+[atom 09:59:07] Computation graph saved to /root/.cache/atom/torch_compile_cache/19c3f0cc78/rank_5/drafter/computation_graph.py
+[atom 09:59:08] Compiling a graph for dynamic shape takes 2.07 s
+[atom 09:59:08] Computation graph saved to /root/.cache/atom/torch_compile_cache/19c3f0cc78/rank_7/drafter/computation_graph.py
+[atom 09:59:08] Compiling a graph for dynamic shape takes 2.08 s
+[atom 09:59:08] Computation graph saved to /root/.cache/atom/torch_compile_cache/19c3f0cc78/rank_1/drafter/computation_graph.py
+[atom 09:59:08] Model Runner0/8: warmup_model 49.33 seconds with 1 reqs 16384 tokens
+[atom 09:59:08] Model warmup done: /it-share/models/MiMo-V2.5-Pro
+[atom 09:59:08] Model Runner2/8: warmup_model 51.91 seconds with 1 reqs 16384 tokens
+[atom 09:59:08] Memory budget: total_gpu=287.98GB, free=149.55GB, utilization=0.9, budget=259.19GB, peak_torch=125.11GB, cudagraph_est=0.27GB, safety=5.76GB, available_for_kv=128.05GB, block_bytes=457856, num_kvcache_blocks=300288
+[atom 09:59:08] Concurrent capacity vs context length (max_model_len=1048576, block_size=16, max_slots=512, pool_blocks=300288):
+   10% ( 104857 tok):   6554 blk/req → max_concurrent=45    (bound by blocks)
+   30% ( 314572 tok):  19661 blk/req → max_concurrent=15    (bound by blocks)
+   50% ( 524288 tok):  32768 blk/req → max_concurrent=9     (bound by blocks)
+   70% ( 734003 tok):  45876 blk/req → max_concurrent=6     (bound by blocks)
+   90% ( 943718 tok):  58983 blk/req → max_concurrent=5     (bound by blocks)
+  100% (1048576 tok):  65536 blk/req → max_concurrent=4     (bound by blocks)
+[atom 09:59:08] Model warmup done: /it-share/models/MiMo-V2.5-Pro
+[atom 09:59:08] Memory budget: total_gpu=287.98GB, free=149.52GB, utilization=0.9, budget=259.19GB, peak_torch=125.11GB, cudagraph_est=0.27GB, safety=5.76GB, available_for_kv=128.05GB, block_bytes=457856, num_kvcache_blocks=300288
+[atom 09:59:08] Concurrent capacity vs context length (max_model_len=1048576, block_size=16, max_slots=512, pool_blocks=300288):
+   10% ( 104857 tok):   6554 blk/req → max_concurrent=45    (bound by blocks)
+   30% ( 314572 tok):  19661 blk/req → max_concurrent=15    (bound by blocks)
+   50% ( 524288 tok):  32768 blk/req → max_concurrent=9     (bound by blocks)
+   70% ( 734003 tok):  45876 blk/req → max_concurrent=6     (bound by blocks)
+   90% ( 943718 tok):  58983 blk/req → max_concurrent=5     (bound by blocks)
+  100% (1048576 tok):  65536 blk/req → max_concurrent=4     (bound by blocks)
+[atom 09:59:08] Allocating KV cache for 70 target layers + 3 draft (MTP) layers = 73 total layers
+[atom 09:59:08] Binding KV cache for target model starting at layer_id=0
+[atom 09:59:08] Allocating KV cache for 70 target layers + 3 draft (MTP) layers = 73 total layers
+[atom 09:59:08] Binding KV cache for target model starting at layer_id=0
+[atom 09:59:08] Model Runner6/8: warmup_model 27.05 seconds with 1 reqs 16384 tokens
+[atom 09:59:08] Model warmup done: /it-share/models/MiMo-V2.5-Pro
+[atom 09:59:08] Model Runner5/8: warmup_model 67.19 seconds with 1 reqs 16384 tokens
+[atom 09:59:08] Model warmup done: /it-share/models/MiMo-V2.5-Pro
+[atom 09:59:08] Model Runner3/8: warmup_model 65.80 seconds with 1 reqs 16384 tokens
+[atom 09:59:08] Model warmup done: /it-share/models/MiMo-V2.5-Pro
+[atom 09:59:08] Model Runner4/8: warmup_model 24.97 seconds with 1 reqs 16384 tokens
+[atom 09:59:08] Model warmup done: /it-share/models/MiMo-V2.5-Pro
+[atom 09:59:08] Memory budget: total_gpu=287.98GB, free=149.89GB, utilization=0.9, budget=259.19GB, peak_torch=125.11GB, cudagraph_est=0.27GB, safety=5.76GB, available_for_kv=128.05GB, block_bytes=457856, num_kvcache_blocks=300288
+[atom 09:59:08] Concurrent capacity vs context length (max_model_len=1048576, block_size=16, max_slots=512, pool_blocks=300288):
+   10% ( 104857 tok):   6554 blk/req → max_concurrent=45    (bound by blocks)
+   30% ( 314572 tok):  19661 blk/req → max_concurrent=15    (bound by blocks)
+   50% ( 524288 tok):  32768 blk/req → max_concurrent=9     (bound by blocks)
+   70% ( 734003 tok):  45876 blk/req → max_concurrent=6     (bound by blocks)
+   90% ( 943718 tok):  58983 blk/req → max_concurrent=5     (bound by blocks)
+  100% (1048576 tok):  65536 blk/req → max_concurrent=4     (bound by blocks)
+[atom 09:59:08] Allocating KV cache for 70 target layers + 3 draft (MTP) layers = 73 total layers
+[atom 09:59:08] Binding KV cache for target model starting at layer_id=0
+[atom 09:59:08] Memory budget: total_gpu=287.98GB, free=149.70GB, utilization=0.9, budget=259.19GB, peak_torch=125.11GB, cudagraph_est=0.27GB, safety=5.76GB, available_for_kv=128.05GB, block_bytes=457856, num_kvcache_blocks=300288
+[atom 09:59:08] Concurrent capacity vs context length (max_model_len=1048576, block_size=16, max_slots=512, pool_blocks=300288):
+   10% ( 104857 tok):   6554 blk/req → max_concurrent=45    (bound by blocks)
+   30% ( 314572 tok):  19661 blk/req → max_concurrent=15    (bound by blocks)
+   50% ( 524288 tok):  32768 blk/req → max_concurrent=9     (bound by blocks)
+   70% ( 734003 tok):  45876 blk/req → max_concurrent=6     (bound by blocks)
+   90% ( 943718 tok):  58983 blk/req → max_concurrent=5     (bound by blocks)
+  100% (1048576 tok):  65536 blk/req → max_concurrent=4     (bound by blocks)
+[atom 09:59:08] Memory budget: total_gpu=287.98GB, free=149.50GB, utilization=0.9, budget=259.19GB, peak_torch=125.11GB, cudagraph_est=0.27GB, safety=5.76GB, available_for_kv=128.05GB, block_bytes=457856, num_kvcache_blocks=300288
+[atom 09:59:08] Allocating KV cache for 70 target layers + 3 draft (MTP) layers = 73 total layers
+[atom 09:59:08] Binding KV cache for target model starting at layer_id=0
+[atom 09:59:08] Concurrent capacity vs context length (max_model_len=1048576, block_size=16, max_slots=512, pool_blocks=300288):
+   10% ( 104857 tok):   6554 blk/req → max_concurrent=45    (bound by blocks)
+   30% ( 314572 tok):  19661 blk/req → max_concurrent=15    (bound by blocks)
+   50% ( 524288 tok):  32768 blk/req → max_concurrent=9     (bound by blocks)
+   70% ( 734003 tok):  45876 blk/req → max_concurrent=6     (bound by blocks)
+   90% ( 943718 tok):  58983 blk/req → max_concurrent=5     (bound by blocks)
+  100% (1048576 tok):  65536 blk/req → max_concurrent=4     (bound by blocks)
+[atom 09:59:08] Memory budget: total_gpu=287.98GB, free=149.92GB, utilization=0.9, budget=259.19GB, peak_torch=125.11GB, cudagraph_est=0.27GB, safety=5.76GB, available_for_kv=128.05GB, block_bytes=457856, num_kvcache_blocks=300288
+[atom 09:59:08] Concurrent capacity vs context length (max_model_len=1048576, block_size=16, max_slots=512, pool_blocks=300288):
+   10% ( 104857 tok):   6554 blk/req → max_concurrent=45    (bound by blocks)
+   30% ( 314572 tok):  19661 blk/req → max_concurrent=15    (bound by blocks)
+   50% ( 524288 tok):  32768 blk/req → max_concurrent=9     (bound by blocks)
+   70% ( 734003 tok):  45876 blk/req → max_concurrent=6     (bound by blocks)
+   90% ( 943718 tok):  58983 blk/req → max_concurrent=5     (bound by blocks)
+  100% (1048576 tok):  65536 blk/req → max_concurrent=4     (bound by blocks)
+[atom 09:59:08] Allocating KV cache for 70 target layers + 3 draft (MTP) layers = 73 total layers
+[atom 09:59:08] Binding KV cache for target model starting at layer_id=0
+[atom 09:59:08] Allocating KV cache for 70 target layers + 3 draft (MTP) layers = 73 total layers
+[atom 09:59:08] Binding KV cache for target model starting at layer_id=0
+[atom 09:59:08] Model Runner7/8: warmup_model 47.58 seconds with 1 reqs 16384 tokens
+[atom 09:59:08] Model warmup done: /it-share/models/MiMo-V2.5-Pro
+[atom 09:59:08] Memory budget: total_gpu=287.98GB, free=149.91GB, utilization=0.9, budget=259.19GB, peak_torch=125.11GB, cudagraph_est=0.27GB, safety=5.76GB, available_for_kv=128.05GB, block_bytes=457856, num_kvcache_blocks=300288
+[atom 09:59:08] Concurrent capacity vs context length (max_model_len=1048576, block_size=16, max_slots=512, pool_blocks=300288):
+   10% ( 104857 tok):   6554 blk/req → max_concurrent=45    (bound by blocks)
+   30% ( 314572 tok):  19661 blk/req → max_concurrent=15    (bound by blocks)
+   50% ( 524288 tok):  32768 blk/req → max_concurrent=9     (bound by blocks)
+   70% ( 734003 tok):  45876 blk/req → max_concurrent=6     (bound by blocks)
+   90% ( 943718 tok):  58983 blk/req → max_concurrent=5     (bound by blocks)
+  100% (1048576 tok):  65536 blk/req → max_concurrent=4     (bound by blocks)
+[atom 09:59:08] Allocating KV cache for 70 target layers + 3 draft (MTP) layers = 73 total layers
+[atom 09:59:08] Binding KV cache for target model starting at layer_id=0
+[atom 09:59:08] Model Runner1/8: warmup_model 37.53 seconds with 1 reqs 16384 tokens
+[atom 09:59:08] Model warmup done: /it-share/models/MiMo-V2.5-Pro
+[atom 09:59:08] Memory budget: total_gpu=287.98GB, free=150.79GB, utilization=0.9, budget=259.19GB, peak_torch=125.11GB, cudagraph_est=0.27GB, safety=5.76GB, available_for_kv=128.05GB, block_bytes=457856, num_kvcache_blocks=300288
+[atom 09:59:08] Concurrent capacity vs context length (max_model_len=1048576, block_size=16, max_slots=512, pool_blocks=300288):
+   10% ( 104857 tok):   6554 blk/req → max_concurrent=45    (bound by blocks)
+   30% ( 314572 tok):  19661 blk/req → max_concurrent=15    (bound by blocks)
+   50% ( 524288 tok):  32768 blk/req → max_concurrent=9     (bound by blocks)
+   70% ( 734003 tok):  45876 blk/req → max_concurrent=6     (bound by blocks)
+   90% ( 943718 tok):  58983 blk/req → max_concurrent=5     (bound by blocks)
+  100% (1048576 tok):  65536 blk/req → max_concurrent=4     (bound by blocks)
+[atom 09:59:08] Allocating KV cache for 70 target layers + 3 draft (MTP) layers = 73 total layers
+[atom 09:59:08] Binding KV cache for target model starting at layer_id=0
+[atom 09:59:08] Binding KV cache for draft model starting at layer_id=70
+[atom 09:59:08] Binding KV cache for draft model starting at layer_id=70
+[atom 09:59:08] Binding KV cache for draft model starting at layer_id=70
+[atom 09:59:08] Binding KV cache for draft model starting at layer_id=70
+[atom 09:59:08] Binding KV cache for draft model starting at layer_id=70
+[atom 09:59:08] Binding KV cache for draft model starting at layer_id=70
+[atom 09:59:08] Binding KV cache for draft model starting at layer_id=70
+[atom 09:59:08] Binding KV cache for draft model starting at layer_id=70
+[atom 09:59:08] Mooncake TransferEngine loaded successfully
+[atom 09:59:08] Mooncake TransferEngine loaded successfully
+[atom 09:59:08] Auto-selecting RDMA device rdma0 for GPU 0 (tp_rank=0)
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+I20260527 09:59:08.225212 140779 transfer_engine.cpp:486] Metrics reporting is disabled (set MC_TE_METRIC=1 to enable)
+I20260527 09:59:08.225244 140779 transfer_engine.cpp:91] Transfer Engine parseHostNameWithPort. server_name: 10.24.112.147 port: 12001
+I20260527 09:59:08.225271 140779 transfer_engine.cpp:146] Transfer Engine RPC using P2P handshake, listening on 10.24.112.147:16306
+I20260527 09:59:08.225333 140779 transfer_engine.cpp:185] Auto-discovering topology...
+[atom 09:59:08] Auto-selecting RDMA device rdma2 for GPU 2 (tp_rank=2)
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+I20260527 09:59:08.225479 140781 transfer_engine.cpp:486] Metrics reporting is disabled (set MC_TE_METRIC=1 to enable)
+I20260527 09:59:08.225505 140781 transfer_engine.cpp:91] Transfer Engine parseHostNameWithPort. server_name: 10.24.112.147 port: 12001
+I20260527 09:59:08.225535 140781 transfer_engine.cpp:146] Transfer Engine RPC using P2P handshake, listening on 10.24.112.147:16134
+I20260527 09:59:08.225603 140781 transfer_engine.cpp:185] Auto-discovering topology...
+[atom 09:59:08] Mooncake TransferEngine loaded successfully
+I20260527 09:59:08.225711 140779 transfer_engine.cpp:200] Topology discovery complete. Found 1 HCAs.
+[atom 09:59:08] Mooncake TransferEngine loaded successfully
+I20260527 09:59:08.225939 140779 rdma_context.cpp:533] Find best gid index: 1 on rdma0/
+[atom 09:59:08] Auto-selecting RDMA device rdma6 for GPU 6 (tp_rank=6)
+I20260527 09:59:08.225978 140781 transfer_engine.cpp:200] Topology discovery complete. Found 1 HCAs.
+[atom 09:59:08] Auto-selecting RDMA device rdma4 for GPU 4 (tp_rank=4)
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+I20260527 09:59:08.225983 140785 transfer_engine.cpp:486] Metrics reporting is disabled (set MC_TE_METRIC=1 to enable)
+I20260527 09:59:08.226011 140785 transfer_engine.cpp:91] Transfer Engine parseHostNameWithPort. server_name: 10.24.112.147 port: 12001
+I20260527 09:59:08.226042 140785 transfer_engine.cpp:146] Transfer Engine RPC using P2P handshake, listening on 10.24.112.147:16210
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+I20260527 09:59:08.226043 140783 transfer_engine.cpp:486] Metrics reporting is disabled (set MC_TE_METRIC=1 to enable)
+I20260527 09:59:08.226073 140783 transfer_engine.cpp:91] Transfer Engine parseHostNameWithPort. server_name: 10.24.112.147 port: 12001
+I20260527 09:59:08.226095 140783 transfer_engine.cpp:146] Transfer Engine RPC using P2P handshake, listening on 10.24.112.147:16769
+I20260527 09:59:08.226125 140785 transfer_engine.cpp:185] Auto-discovering topology...
+I20260527 09:59:08.226179 140783 transfer_engine.cpp:185] Auto-discovering topology...
+I20260527 09:59:08.226368 140781 rdma_context.cpp:533] Find best gid index: 1 on rdma2/
+I20260527 09:59:08.226714 140785 transfer_engine.cpp:200] Topology discovery complete. Found 1 HCAs.
+I20260527 09:59:08.226759 140783 transfer_engine.cpp:200] Topology discovery complete. Found 1 HCAs.
+[atom 09:59:08] Mooncake TransferEngine loaded successfully
+I20260527 09:59:08.226891 140785 rdma_context.cpp:533] Find best gid index: 1 on rdma6/
+I20260527 09:59:08.226917 140783 rdma_context.cpp:533] Find best gid index: 1 on rdma4/
+[atom 09:59:08] Mooncake TransferEngine loaded successfully
+[atom 09:59:08] Auto-selecting RDMA device rdma5 for GPU 5 (tp_rank=5)
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+I20260527 09:59:08.227243 140784 transfer_engine.cpp:486] Metrics reporting is disabled (set MC_TE_METRIC=1 to enable)
+I20260527 09:59:08.227273 140784 transfer_engine.cpp:91] Transfer Engine parseHostNameWithPort. server_name: 10.24.112.147 port: 12001
+I20260527 09:59:08.227299 140784 transfer_engine.cpp:146] Transfer Engine RPC using P2P handshake, listening on 10.24.112.147:15196
+I20260527 09:59:08.227357 140784 transfer_engine.cpp:185] Auto-discovering topology...
+[atom 09:59:08] Auto-selecting RDMA device rdma3 for GPU 3 (tp_rank=3)
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+I20260527 09:59:08.227407 140782 transfer_engine.cpp:486] Metrics reporting is disabled (set MC_TE_METRIC=1 to enable)
+I20260527 09:59:08.227435 140782 transfer_engine.cpp:91] Transfer Engine parseHostNameWithPort. server_name: 10.24.112.147 port: 12001
+I20260527 09:59:08.227456 140782 transfer_engine.cpp:146] Transfer Engine RPC using P2P handshake, listening on 10.24.112.147:15479
+I20260527 09:59:08.227526 140782 transfer_engine.cpp:185] Auto-discovering topology...
+I20260527 09:59:08.227959 140784 transfer_engine.cpp:200] Topology discovery complete. Found 1 HCAs.
+I20260527 09:59:08.228082 140782 transfer_engine.cpp:200] Topology discovery complete. Found 1 HCAs.
+[atom 09:59:08] Mooncake TransferEngine loaded successfully
+I20260527 09:59:08.228147 140784 rdma_context.cpp:533] Find best gid index: 1 on rdma5/
+I20260527 09:59:08.228288 140782 rdma_context.cpp:533] Find best gid index: 1 on rdma3/
+[atom 09:59:08] Auto-selecting RDMA device rdma7 for GPU 7 (tp_rank=7)
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+I20260527 09:59:08.228442 140786 transfer_engine.cpp:486] Metrics reporting is disabled (set MC_TE_METRIC=1 to enable)
+I20260527 09:59:08.228468 140786 transfer_engine.cpp:91] Transfer Engine parseHostNameWithPort. server_name: 10.24.112.147 port: 12001
+I20260527 09:59:08.228493 140786 transfer_engine.cpp:146] Transfer Engine RPC using P2P handshake, listening on 10.24.112.147:15249
+I20260527 09:59:08.228565 140786 transfer_engine.cpp:185] Auto-discovering topology...
+I20260527 09:59:08.228943 140786 transfer_engine.cpp:200] Topology discovery complete. Found 1 HCAs.
+I20260527 09:59:08.229166 140786 rdma_context.cpp:533] Find best gid index: 1 on rdma7/
+[atom 09:59:08] Mooncake TransferEngine loaded successfully
+[atom 09:59:08] Auto-selecting RDMA device rdma1 for GPU 1 (tp_rank=1)
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+I20260527 09:59:08.232239 140780 transfer_engine.cpp:486] Metrics reporting is disabled (set MC_TE_METRIC=1 to enable)
+I20260527 09:59:08.232263 140780 transfer_engine.cpp:91] Transfer Engine parseHostNameWithPort. server_name: 10.24.112.147 port: 12001
+I20260527 09:59:08.232281 140780 transfer_engine.cpp:146] Transfer Engine RPC using P2P handshake, listening on 10.24.112.147:15135
+I20260527 09:59:08.232343 140780 transfer_engine.cpp:185] Auto-discovering topology...
+I20260527 09:59:08.232689 140780 transfer_engine.cpp:200] Topology discovery complete. Found 1 HCAs.
+I20260527 09:59:08.232854 140780 rdma_context.cpp:533] Find best gid index: 1 on rdma1/
+I20260527 09:59:08.252539 140784 rdma_context.cpp:126] RDMA device: rdma5, LID: 0, GID: (GID_Index 1) 00:00:00:00:00:00:00:00:00:00:ff:ff:0a:66:11:97
+I20260527 09:59:08.254395 140785 rdma_context.cpp:126] RDMA device: rdma6, LID: 0, GID: (GID_Index 1) 00:00:00:00:00:00:00:00:00:00:ff:ff:0a:66:11:a1
+E20260527 09:59:08.278971 140784 rdma_context.cpp:243] Failed to register memory 0x2fab3fe50: Cannot allocate memory [12]
+[atom 09:59:08] Mooncake TransferEngine initialized: ip=10.24.112.147, protocol=rdma, ib_device=rdma5, rpc_port=15196
+[atom 09:59:08] Registering 284 RDMA chunks (284 block regions, 0 slot regions, max_chunk=2.00 GiB)
+E20260527 09:59:08.281200 140785 rdma_context.cpp:243] Failed to register memory 0x38f301830: Cannot allocate memory [12]
+[atom 09:59:08] Mooncake TransferEngine initialized: ip=10.24.112.147, protocol=rdma, ib_device=rdma6, rpc_port=16210
+[atom 09:59:08] Registering 284 RDMA chunks (284 block regions, 0 slot regions, max_chunk=2.00 GiB)
+I20260527 09:59:08.288482 140780 rdma_context.cpp:126] RDMA device: rdma1, LID: 0, GID: (GID_Index 1) 00:00:00:00:00:00:00:00:00:00:ff:ff:0a:66:11:6f
+I20260527 09:59:08.295863 140781 rdma_context.cpp:126] RDMA device: rdma2, LID: 0, GID: (GID_Index 1) 00:00:00:00:00:00:00:00:00:00:ff:ff:0a:66:11:79
+I20260527 09:59:08.299680 140779 rdma_context.cpp:126] RDMA device: rdma0, LID: 0, GID: (GID_Index 1) 00:00:00:00:00:00:00:00:00:00:ff:ff:0a:66:11:65
+I20260527 09:59:08.306815 140783 rdma_context.cpp:126] RDMA device: rdma4, LID: 0, GID: (GID_Index 1) 00:00:00:00:00:00:00:00:00:00:ff:ff:0a:66:11:8d
+I20260527 09:59:08.309334 140782 rdma_context.cpp:126] RDMA device: rdma3, LID: 0, GID: (GID_Index 1) 00:00:00:00:00:00:00:00:00:00:ff:ff:0a:66:11:83
+E20260527 09:59:08.315541 140780 rdma_context.cpp:243] Failed to register memory 0x3d476a800: Cannot allocate memory [12]
+[atom 09:59:08] Mooncake TransferEngine initialized: ip=10.24.112.147, protocol=rdma, ib_device=rdma1, rpc_port=15135
+[atom 09:59:08] Registering 284 RDMA chunks (284 block regions, 0 slot regions, max_chunk=2.00 GiB)
+I20260527 09:59:08.317142 140786 rdma_context.cpp:126] RDMA device: rdma7, LID: 0, GID: (GID_Index 1) 00:00:00:00:00:00:00:00:00:00:ff:ff:0a:66:11:ab
+E20260527 09:59:08.322762 140781 rdma_context.cpp:243] Failed to register memory 0x34f304ec0: Cannot allocate memory [12]
+[atom 09:59:08] Mooncake TransferEngine initialized: ip=10.24.112.147, protocol=rdma, ib_device=rdma2, rpc_port=16134
+[atom 09:59:08] Registering 284 RDMA chunks (284 block regions, 0 slot regions, max_chunk=2.00 GiB)
+E20260527 09:59:08.326740 140779 rdma_context.cpp:243] Failed to register memory 0x26b45ebf0: Cannot allocate memory [12]
+[atom 09:59:08] Mooncake TransferEngine initialized: ip=10.24.112.147, protocol=rdma, ib_device=rdma0, rpc_port=16306
+[atom 09:59:08] Registering 284 RDMA chunks (284 block regions, 0 slot regions, max_chunk=2.00 GiB)
+E20260527 09:59:08.334757 140783 rdma_context.cpp:243] Failed to register memory 0x31eda53a0: Cannot allocate memory [12]
+[atom 09:59:08] Mooncake TransferEngine initialized: ip=10.24.112.147, protocol=rdma, ib_device=rdma4, rpc_port=16769
+E20260527 09:59:08.335713 140782 rdma_context.cpp:243] Failed to register memory 0xbedea2d10: Cannot allocate memory [12]
+[atom 09:59:08] Registering 284 RDMA chunks (284 block regions, 0 slot regions, max_chunk=2.00 GiB)
+[atom 09:59:08] Mooncake TransferEngine initialized: ip=10.24.112.147, protocol=rdma, ib_device=rdma3, rpc_port=15479
+[atom 09:59:08] Registering 284 RDMA chunks (284 block regions, 0 slot regions, max_chunk=2.00 GiB)
+E20260527 09:59:08.344067 140786 rdma_context.cpp:243] Failed to register memory 0x320939f00: Cannot allocate memory [12]
+[atom 09:59:08] Mooncake TransferEngine initialized: ip=10.24.112.147, protocol=rdma, ib_device=rdma7, rpc_port=15249
+[atom 09:59:08] Registering 284 RDMA chunks (284 block regions, 0 slot regions, max_chunk=2.00 GiB)
+[atom 09:59:08] batch_register_memory OK (284 chunks)
+[atom 09:59:08] Mooncake KV registration complete: role=CONSUMER, engine_id=10.24.112.147:15196, is_v4=False, num_blocks=300288, block_regions=284, slot_regions=0
+[atom 09:59:08] Mooncake notification listener bound to tcp://*:50971
+[atom 09:59:08] batch_register_memory OK (284 chunks)
+[atom 09:59:08] Mooncake KV registration complete: role=CONSUMER, engine_id=10.24.112.147:16210, is_v4=False, num_blocks=300288, block_regions=284, slot_regions=0
+[atom 09:59:08] Mooncake notification listener bound to tcp://*:35179
+[atom 09:59:08] batch_register_memory OK (284 chunks)
+[atom 09:59:08] Mooncake KV registration complete: role=CONSUMER, engine_id=10.24.112.147:15135, is_v4=False, num_blocks=300288, block_regions=284, slot_regions=0
+[atom 09:59:08] Mooncake notification listener bound to tcp://*:53409
+[atom 09:59:08] batch_register_memory OK (284 chunks)
+[atom 09:59:08] Mooncake KV registration complete: role=CONSUMER, engine_id=10.24.112.147:15479, is_v4=False, num_blocks=300288, block_regions=284, slot_regions=0
+[atom 09:59:08] Mooncake notification listener bound to tcp://*:46491
+[atom 09:59:08] batch_register_memory OK (284 chunks)
+[atom 09:59:08] Mooncake KV registration complete: role=CONSUMER, engine_id=10.24.112.147:16769, is_v4=False, num_blocks=300288, block_regions=284, slot_regions=0
+[atom 09:59:08] Mooncake notification listener bound to tcp://*:58673
+[atom 09:59:08] batch_register_memory OK (284 chunks)
+[atom 09:59:08] Mooncake KV registration complete: role=CONSUMER, engine_id=10.24.112.147:16306, is_v4=False, num_blocks=300288, block_regions=284, slot_regions=0
+[atom 09:59:08] Mooncake notification listener bound to tcp://*:54133
+/opt/venv/lib/python3.12/site-packages/torch/distributed/c10d_logger.py:83: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  return func(*args, **kwargs)
+[rank0]:[W527 09:59:08.049643581 ProcessGroupNCCL.cpp:5140] Guessing device ID based on global rank. This can cause a hang if rank to GPU mapping is heterogeneous. You can specify device_id in init_process_group()
+[atom 09:59:08] batch_register_memory OK (284 chunks)
+[atom 09:59:08] Mooncake KV registration complete: role=CONSUMER, engine_id=10.24.112.147:15249, is_v4=False, num_blocks=300288, block_regions=284, slot_regions=0
+[atom 09:59:08] Mooncake notification listener bound to tcp://*:35069
+[atom 09:59:08] batch_register_memory OK (284 chunks)
+[atom 09:59:08] Mooncake KV registration complete: role=CONSUMER, engine_id=10.24.112.147:16134, is_v4=False, num_blocks=300288, block_regions=284, slot_regions=0
+[atom 09:59:08] Mooncake notification listener bound to tcp://*:50579
+  0%|          | 0/11 [00:00<?, ?it/s]Capturing bs=512, max_q_len=2:   0%|          | 0/11 [00:00<?, ?it/s]Capturing bs=512, max_q_len=2:   9%|▉         | 1/11 [00:00<00:07,  1.30it/s]Capturing bs=256, max_q_len=2:   9%|▉         | 1/11 [00:00<00:07,  1.30it/s]Capturing bs=256, max_q_len=2:  18%|█▊        | 2/11 [00:01<00:05,  1.67it/s]Capturing bs=128, max_q_len=2:  18%|█▊        | 2/11 [00:01<00:05,  1.67it/s]Capturing bs=128, max_q_len=2:  27%|██▋       | 3/11 [00:01<00:03,  2.63it/s]Capturing bs=64, max_q_len=2:  27%|██▋       | 3/11 [00:01<00:03,  2.63it/s] Capturing bs=64, max_q_len=2:  36%|███▋      | 4/11 [00:01<00:01,  3.63it/s]Capturing bs=48, max_q_len=2:  36%|███▋      | 4/11 [00:01<00:01,  3.63it/s]Capturing bs=48, max_q_len=2:  45%|████▌     | 5/11 [00:01<00:01,  4.64it/s]Capturing bs=32, max_q_len=2:  45%|████▌     | 5/11 [00:01<00:01,  4.64it/s][aiter] type hints mismatch, override to --> ck_moe_stage1(hidden_states: torch.Tensor, w1: torch.Tensor, w2: torch.Tensor, sorted_token_ids: torch.Tensor, sorted_expert_ids: torch.Tensor, num_valid_ids: torch.Tensor, out: torch.Tensor, topk: int, kernelName: str = None, w1_scale: Optional[torch.Tensor] = None, a1_scale: Optional[torch.Tensor] = None, block_m: Optional[int] = 32, sorted_weights: Optional[torch.Tensor] = None, quant_type: int = 0, activation: int = 0, splitk: Optional[int] = 1, non_temporal_load: bool = False, dst_type: Optional[str] = None, is_shuffled: bool = True) -> None
+[aiter] type hints mismatch, override to --> ck_moe_stage2(inter_states: torch.Tensor, w1: torch.Tensor, w2: torch.Tensor, sorted_token_ids: torch.Tensor, sorted_expert_ids: torch.Tensor, num_valid_ids: torch.Tensor, out: torch.Tensor, topk: int, kernelName: str = None, w2_scale: Optional[torch.Tensor] = None, a2_scale: Optional[torch.Tensor] = None, block_m: Optional[int] = 32, sorted_weights: Optional[torch.Tensor] = None, quant_type: int = 0, activation: int = 0, splitk: Optional[int] = 1, non_temporal_load: bool = False, dst_type: Optional[str] = None, is_shuffled: bool = True) -> None
+[aiter] type hints mismatch, override to --> ck_moe_stage1(hidden_states: torch.Tensor, w1: torch.Tensor, w2: torch.Tensor, sorted_token_ids: torch.Tensor, sorted_expert_ids: torch.Tensor, num_valid_ids: torch.Tensor, out: torch.Tensor, topk: int, kernelName: str = None, w1_scale: Optional[torch.Tensor] = None, a1_scale: Optional[torch.Tensor] = None, block_m: Optional[int] = 32, sorted_weights: Optional[torch.Tensor] = None, quant_type: int = 0, activation: int = 0, splitk: Optional[int] = 1, non_temporal_load: bool = False, dst_type: Optional[str] = None, is_shuffled: bool = True) -> None
+[aiter] type hints mismatch, override to --> ck_moe_stage2(inter_states: torch.Tensor, w1: torch.Tensor, w2: torch.Tensor, sorted_token_ids: torch.Tensor, sorted_expert_ids: torch.Tensor, num_valid_ids: torch.Tensor, out: torch.Tensor, topk: int, kernelName: str = None, w2_scale: Optional[torch.Tensor] = None, a2_scale: Optional[torch.Tensor] = None, block_m: Optional[int] = 32, sorted_weights: Optional[torch.Tensor] = None, quant_type: int = 0, activation: int = 0, splitk: Optional[int] = 1, non_temporal_load: bool = False, dst_type: Optional[str] = None, is_shuffled: bool = True) -> None
+[aiter] type hints mismatch, override to --> ck_moe_stage1(hidden_states: torch.Tensor, w1: torch.Tensor, w2: torch.Tensor, sorted_token_ids: torch.Tensor, sorted_expert_ids: torch.Tensor, num_valid_ids: torch.Tensor, out: torch.Tensor, topk: int, kernelName: str = None, w1_scale: Optional[torch.Tensor] = None, a1_scale: Optional[torch.Tensor] = None, block_m: Optional[int] = 32, sorted_weights: Optional[torch.Tensor] = None, quant_type: int = 0, activation: int = 0, splitk: Optional[int] = 1, non_temporal_load: bool = False, dst_type: Optional[str] = None, is_shuffled: bool = True) -> None
+[aiter] type hints mismatch, override to --> ck_moe_stage2(inter_states: torch.Tensor, w1: torch.Tensor, w2: torch.Tensor, sorted_token_ids: torch.Tensor, sorted_expert_ids: torch.Tensor, num_valid_ids: torch.Tensor, out: torch.Tensor, topk: int, kernelName: str = None, w2_scale: Optional[torch.Tensor] = None, a2_scale: Optional[torch.Tensor] = None, block_m: Optional[int] = 32, sorted_weights: Optional[torch.Tensor] = None, quant_type: int = 0, activation: int = 0, splitk: Optional[int] = 1, non_temporal_load: bool = False, dst_type: Optional[str] = None, is_shuffled: bool = True) -> None
+[aiter] type hints mismatch, override to --> ck_moe_stage1(hidden_states: torch.Tensor, w1: torch.Tensor, w2: torch.Tensor, sorted_token_ids: torch.Tensor, sorted_expert_ids: torch.Tensor, num_valid_ids: torch.Tensor, out: torch.Tensor, topk: int, kernelName: str = None, w1_scale: Optional[torch.Tensor] = None, a1_scale: Optional[torch.Tensor] = None, block_m: Optional[int] = 32, sorted_weights: Optional[torch.Tensor] = None, quant_type: int = 0, activation: int = 0, splitk: Optional[int] = 1, non_temporal_load: bool = False, dst_type: Optional[str] = None, is_shuffled: bool = True) -> None
+[aiter] type hints mismatch, override to --> ck_moe_stage1(hidden_states: torch.Tensor, w1: torch.Tensor, w2: torch.Tensor, sorted_token_ids: torch.Tensor, sorted_expert_ids: torch.Tensor, num_valid_ids: torch.Tensor, out: torch.Tensor, topk: int, kernelName: str = None, w1_scale: Optional[torch.Tensor] = None, a1_scale: Optional[torch.Tensor] = None, block_m: Optional[int] = 32, sorted_weights: Optional[torch.Tensor] = None, quant_type: int = 0, activation: int = 0, splitk: Optional[int] = 1, non_temporal_load: bool = False, dst_type: Optional[str] = None, is_shuffled: bool = True) -> None
+[aiter] type hints mismatch, override to --> ck_moe_stage2(inter_states: torch.Tensor, w1: torch.Tensor, w2: torch.Tensor, sorted_token_ids: torch.Tensor, sorted_expert_ids: torch.Tensor, num_valid_ids: torch.Tensor, out: torch.Tensor, topk: int, kernelName: str = None, w2_scale: Optional[torch.Tensor] = None, a2_scale: Optional[torch.Tensor] = None, block_m: Optional[int] = 32, sorted_weights: Optional[torch.Tensor] = None, quant_type: int = 0, activation: int = 0, splitk: Optional[int] = 1, non_temporal_load: bool = False, dst_type: Optional[str] = None, is_shuffled: bool = True) -> None
+[aiter] type hints mismatch, override to --> ck_moe_stage2(inter_states: torch.Tensor, w1: torch.Tensor, w2: torch.Tensor, sorted_token_ids: torch.Tensor, sorted_expert_ids: torch.Tensor, num_valid_ids: torch.Tensor, out: torch.Tensor, topk: int, kernelName: str = None, w2_scale: Optional[torch.Tensor] = None, a2_scale: Optional[torch.Tensor] = None, block_m: Optional[int] = 32, sorted_weights: Optional[torch.Tensor] = None, quant_type: int = 0, activation: int = 0, splitk: Optional[int] = 1, non_temporal_load: bool = False, dst_type: Optional[str] = None, is_shuffled: bool = True) -> None
+Capturing bs=32, max_q_len=2:  55%|█████▍    | 6/11 [00:01<00:00,  5.55it/s]Capturing bs=16, max_q_len=2:  55%|█████▍    | 6/11 [00:01<00:00,  5.55it/s][aiter] type hints mismatch, override to --> ck_moe_stage1(hidden_states: torch.Tensor, w1: torch.Tensor, w2: torch.Tensor, sorted_token_ids: torch.Tensor, sorted_expert_ids: torch.Tensor, num_valid_ids: torch.Tensor, out: torch.Tensor, topk: int, kernelName: str = None, w1_scale: Optional[torch.Tensor] = None, a1_scale: Optional[torch.Tensor] = None, block_m: Optional[int] = 32, sorted_weights: Optional[torch.Tensor] = None, quant_type: int = 0, activation: int = 0, splitk: Optional[int] = 1, non_temporal_load: bool = False, dst_type: Optional[str] = None, is_shuffled: bool = True) -> None
+[aiter] type hints mismatch, override to --> ck_moe_stage2(inter_states: torch.Tensor, w1: torch.Tensor, w2: torch.Tensor, sorted_token_ids: torch.Tensor, sorted_expert_ids: torch.Tensor, num_valid_ids: torch.Tensor, out: torch.Tensor, topk: int, kernelName: str = None, w2_scale: Optional[torch.Tensor] = None, a2_scale: Optional[torch.Tensor] = None, block_m: Optional[int] = 32, sorted_weights: Optional[torch.Tensor] = None, quant_type: int = 0, activation: int = 0, splitk: Optional[int] = 1, non_temporal_load: bool = False, dst_type: Optional[str] = None, is_shuffled: bool = True) -> None
+[aiter] type hints mismatch, override to --> ck_moe_stage1(hidden_states: torch.Tensor, w1: torch.Tensor, w2: torch.Tensor, sorted_token_ids: torch.Tensor, sorted_expert_ids: torch.Tensor, num_valid_ids: torch.Tensor, out: torch.Tensor, topk: int, kernelName: str = None, w1_scale: Optional[torch.Tensor] = None, a1_scale: Optional[torch.Tensor] = None, block_m: Optional[int] = 32, sorted_weights: Optional[torch.Tensor] = None, quant_type: int = 0, activation: int = 0, splitk: Optional[int] = 1, non_temporal_load: bool = False, dst_type: Optional[str] = None, is_shuffled: bool = True) -> None
+[aiter] type hints mismatch, override to --> ck_moe_stage2(inter_states: torch.Tensor, w1: torch.Tensor, w2: torch.Tensor, sorted_token_ids: torch.Tensor, sorted_expert_ids: torch.Tensor, num_valid_ids: torch.Tensor, out: torch.Tensor, topk: int, kernelName: str = None, w2_scale: Optional[torch.Tensor] = None, a2_scale: Optional[torch.Tensor] = None, block_m: Optional[int] = 32, sorted_weights: Optional[torch.Tensor] = None, quant_type: int = 0, activation: int = 0, splitk: Optional[int] = 1, non_temporal_load: bool = False, dst_type: Optional[str] = None, is_shuffled: bool = True) -> None
+[aiter] type hints mismatch, override to --> ck_moe_stage1(hidden_states: torch.Tensor, w1: torch.Tensor, w2: torch.Tensor, sorted_token_ids: torch.Tensor, sorted_expert_ids: torch.Tensor, num_valid_ids: torch.Tensor, out: torch.Tensor, topk: int, kernelName: str = None, w1_scale: Optional[torch.Tensor] = None, a1_scale: Optional[torch.Tensor] = None, block_m: Optional[int] = 32, sorted_weights: Optional[torch.Tensor] = None, quant_type: int = 0, activation: int = 0, splitk: Optional[int] = 1, non_temporal_load: bool = False, dst_type: Optional[str] = None, is_shuffled: bool = True) -> None
+[aiter] type hints mismatch, override to --> ck_moe_stage2(inter_states: torch.Tensor, w1: torch.Tensor, w2: torch.Tensor, sorted_token_ids: torch.Tensor, sorted_expert_ids: torch.Tensor, num_valid_ids: torch.Tensor, out: torch.Tensor, topk: int, kernelName: str = None, w2_scale: Optional[torch.Tensor] = None, a2_scale: Optional[torch.Tensor] = None, block_m: Optional[int] = 32, sorted_weights: Optional[torch.Tensor] = None, quant_type: int = 0, activation: int = 0, splitk: Optional[int] = 1, non_temporal_load: bool = False, dst_type: Optional[str] = None, is_shuffled: bool = True) -> None
+Capturing bs=16, max_q_len=2:  64%|██████▎   | 7/11 [00:01<00:00,  6.10it/s]Capturing bs=8, max_q_len=2:  64%|██████▎   | 7/11 [00:01<00:00,  6.10it/s] Capturing bs=8, max_q_len=2:  73%|███████▎  | 8/11 [00:01<00:00,  6.95it/s]Capturing bs=4, max_q_len=2:  73%|███████▎  | 8/11 [00:01<00:00,  6.95it/s]Capturing bs=4, max_q_len=2:  82%|████████▏ | 9/11 [00:02<00:00,  7.44it/s]Capturing bs=2, max_q_len=2:  82%|████████▏ | 9/11 [00:02<00:00,  7.44it/s]Capturing bs=2, max_q_len=2:  91%|█████████ | 10/11 [00:02<00:00,  8.06it/s]Capturing bs=1, max_q_len=2:  91%|█████████ | 10/11 [00:02<00:00,  8.06it/s]Capturing bs=1, max_q_len=2: 100%|██████████| 11/11 [00:02<00:00,  8.54it/s]Capturing bs=1, max_q_len=2: 100%|██████████| 11/11 [00:02<00:00,  4.89it/s]
+[atom 09:59:16] Post-init memory: actual=264.98GB (92.0%), target=259.19GB (90%)
+[atom 09:59:16] Actual GPU memory usage (92.0%) exceeds target (90%) by 2.0%. Consider reducing gpu_memory_utilization.
+[atom 09:59:16] Post-init memory: actual=264.71GB (91.9%), target=259.19GB (90%)
+[atom 09:59:16] Post-init memory: actual=263.28GB (91.4%), target=259.19GB (90%)
+[atom 09:59:16] Post-init memory: actual=264.91GB (92.0%), target=259.19GB (90%)
+[atom 09:59:16] Post-init memory: actual=264.47GB (91.8%), target=259.19GB (90%)
+[atom 09:59:16] Engine Core: cudagraph capture[1, 2, 4, 8, 16, 32, 48, 64, 128, 256, 512] cost: 2.40 seconds
+[atom 09:59:16] Engine Core: load model runner success
+[atom 09:59:16] Post-init memory: actual=264.96GB (92.0%), target=259.19GB (90%)
+[atom 09:59:16] Post-init memory: actual=264.42GB (91.8%), target=259.19GB (90%)
+[atom 09:59:16] Actual GPU memory usage (92.0%) exceeds target (90%) by 2.0%. Consider reducing gpu_memory_utilization.
+[atom 09:59:16] Post-init memory: actual=264.43GB (91.8%), target=259.19GB (90%)
+[atom 09:59:17] Mooncake TransferEngine loaded successfully
+[atom 09:59:17] Engine Core: EngineCore fully initialized and ready
+[atom 09:59:17] Engine Core Mgr: DP rank 0 is fully initialized and ready
+[atom 09:59:17] Engine Core Mgr: All EngineCores are fully initialized and ready
+[atom 09:59:17] Engine Core Mgr: All 1 EngineCores initialized and ready
+[atom 09:59:17] KV transfer config loaded: {'kv_role': 'kv_consumer', 'kv_connector': 'mooncake', 'proxy_ip': '10.24.112.181', 'proxy_ping_port': 36367, 'http_port': 8004}
+[atom 09:59:17] LLMEngine init with 1 data parallel ranks
+[atom 09:59:17] LLMEngine init with 1 data parallel ranks
+[atom 09:59:17] Starting server on 0.0.0.0:8004...
+INFO:     Started server process [140212]
+INFO:     Waiting for application startup.
+[atom 09:59:17] Server started successfully and ready to accept requests
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8004 (Press CTRL+C to quit)
+[atom 10:01:08] Request 0 arrived, input tokens: 16384, pending requests: 1
+[atom 10:01:08] API: Created request_id=cmpl-c06f4a85dd564b2a8e1fe0deb8f0b367, seq_id=0
+INFO:     10.24.112.181:45622 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:01:08] [SCHEDULER-CONSUMER] Queued req 0 for remote KV recv (1024 blocks, slot=-1), transfer_id=0, remote_host=10.24.112.181, remote_handshake_port=6301
+[atom 10:01:08] [SCHEDULER] build_connector_meta: 1 recv, 0 save, id_map={0: 0}
+[atom 10:01:08] [CONSUMER] start_load_kv: 1 reqs_to_recv, id_map={0: 0}
+[atom 10:01:08] [CONSUMER] start_load_kv: 1 reqs_to_recv, id_map={0: 0}
+[atom 10:01:08] [CONSUMER] start_load_kv: 1 reqs_to_recv, id_map={0: 0}
+[atom 10:01:08] [CONSUMER] start_load_kv: 1 reqs_to_recv, id_map={0: 0}
+[atom 10:01:08] [CONSUMER] start_load_kv: 1 reqs_to_recv, id_map={0: 0}
+[atom 10:01:08] [CONSUMER] start_load_kv: 1 reqs_to_recv, id_map={0: 0}
+[atom 10:01:08] [CONSUMER] start_load_kv: 1 reqs_to_recv, id_map={0: 0}
+[atom 10:01:08] [CONSUMER] Sending write_request for req 0 (transfer_id=0) to tcp://10.24.112.181:6303 (handshake_port=6301, dp_rank=0, local_tp=2, remote_tp=2/8), dst_block_ids=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9], num_regions=284, bytes/block=[64, 3072], num_blocks=300288
+[atom 10:01:08] [CONSUMER] Sending write_request for req 0 (transfer_id=0) to tcp://10.24.112.181:6301 (handshake_port=6301, dp_rank=0, local_tp=0, remote_tp=0/8), dst_block_ids=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9], num_regions=284, bytes/block=[64, 3072], num_blocks=300288
+[atom 10:01:08] [CONSUMER] Sending write_request for req 0 (transfer_id=0) to tcp://10.24.112.181:6306 (handshake_port=6301, dp_rank=0, local_tp=5, remote_tp=5/8), dst_block_ids=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9], num_regions=284, bytes/block=[64, 3072], num_blocks=300288
+[atom 10:01:08] [CONSUMER] Sending write_request for req 0 (transfer_id=0) to tcp://10.24.112.181:6308 (handshake_port=6301, dp_rank=0, local_tp=7, remote_tp=7/8), dst_block_ids=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9], num_regions=284, bytes/block=[64, 3072], num_blocks=300288
+[atom 10:01:08] [CONSUMER] Sending write_request for req 0 (transfer_id=0) to tcp://10.24.112.181:6304 (handshake_port=6301, dp_rank=0, local_tp=3, remote_tp=3/8), dst_block_ids=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9], num_regions=284, bytes/block=[64, 3072], num_blocks=300288
+[atom 10:01:08] [CONSUMER] Sending write_request for req 0 (transfer_id=0) to tcp://10.24.112.181:6305 (handshake_port=6301, dp_rank=0, local_tp=4, remote_tp=4/8), dst_block_ids=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9], num_regions=284, bytes/block=[64, 3072], num_blocks=300288
+[atom 10:01:08] [CONSUMER] start_load_kv: 1 reqs_to_recv, id_map={0: 0}
+[atom 10:01:08] [CONSUMER] Sending write_request for req 0 (transfer_id=0) to tcp://10.24.112.181:6302 (handshake_port=6301, dp_rank=0, local_tp=1, remote_tp=1/8), dst_block_ids=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9], num_regions=284, bytes/block=[64, 3072], num_blocks=300288
+[atom 10:01:08] [CONSUMER] Sending write_request for req 0 (transfer_id=0) to tcp://10.24.112.181:6307 (handshake_port=6301, dp_rank=0, local_tp=6, remote_tp=6/8), dst_block_ids=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9], num_regions=284, bytes/block=[64, 3072], num_blocks=300288
+[atom 10:01:08] [CONSUMER] write_request sent for req 0 to tcp://10.24.112.181:6301
+[atom 10:01:08] [CONSUMER] write_request sent for req 0 to tcp://10.24.112.181:6305
+[atom 10:01:08] [CONSUMER] write_request sent for req 0 to tcp://10.24.112.181:6303
+[atom 10:01:08] [CONSUMER] write_request sent for req 0 to tcp://10.24.112.181:6306
+[atom 10:01:08] [CONSUMER] write_request sent for req 0 to tcp://10.24.112.181:6304
+[atom 10:01:08] [CONSUMER] write_request sent for req 0 to tcp://10.24.112.181:6308
+[atom 10:01:08] [CONSUMER] write_request sent for req 0 to tcp://10.24.112.181:6302
+[atom 10:01:08] [CONSUMER] write_request sent for req 0 to tcp://10.24.112.181:6307
+[atom 10:01:08] [CONSUMER] Write-done received for req 0, done_recving now: {0}
+[atom 10:01:08] [CONSUMER] get_finished: sending=set(), recving={0}
+[atom 10:01:08] [CONSUMER] Write-done received for req 0, done_recving now: {0}
+[atom 10:01:08] [CONSUMER] Write-done received for req 0, done_recving now: {0}
+[atom 10:01:08] [CONSUMER] get_finished: sending=set(), recving={0}
+[atom 10:01:08] [CONSUMER] Write-done received for req 0, done_recving now: {0}
+[atom 10:01:08] [CONSUMER] get_finished: sending=set(), recving={0}
+[atom 10:01:08] [CONSUMER] Write-done received for req 0, done_recving now: {0}
+[atom 10:01:08] [CONSUMER] Write-done received for req 0, done_recving now: {0}
+[atom 10:01:08] [CONSUMER] get_finished: sending=set(), recving={0}
+[atom 10:01:08] [CONSUMER] Write-done received for req 0, done_recving now: {0}
+[atom 10:01:08] [CONSUMER] get_finished: sending=set(), recving={0}
+[atom 10:01:08] [CONSUMER] Write-done received for req 0, done_recving now: {0}
+[atom 10:01:08] [CONSUMER] Write-done received for req 0, done_recving now: {0}
+[atom 10:01:08] [CONSUMER] get_finished: sending=set(), recving={0}
+[atom 10:01:08] [CONSUMER] Write-done received for req 0, done_recving now: {0}
+[atom 10:01:08] [CONSUMER] get_finished: sending=set(), recving={0}
+[atom 10:01:08] [CONSUMER] Write-done received for req 0, done_recving now: {0}
+[atom 10:01:08] [CONSUMER] Write-done received for req 0, done_recving now: {0}
+[atom 10:01:08] [CONSUMER] get_finished: sending=set(), recving={0}
+[atom 10:01:08] [CONSUMER] Write-done received for req 0, done_recving now: {0}
+[atom 10:01:08] [CONSUMER] get_finished: sending=set(), recving={0}
+[atom 10:01:08] [CONSUMER] Write-done received for req 0, done_recving now: {0}
+[atom 10:01:08] [CONSUMER] Write-done received for req 0, done_recving now: {0}
+[atom 10:01:08] [CONSUMER] get_finished: sending=set(), recving={0}
+[atom 10:01:08] [CONSUMER] Write-done received for req 0, done_recving now: {0}
+[atom 10:01:08] [CONSUMER] get_finished: sending=set(), recving={0}
+[atom 10:01:08] [CONSUMER] Write-done received for req 0, done_recving now: {0}
+[atom 10:01:08] [CONSUMER] Write-done received for req 0, done_recving now: {0}
+[atom 10:01:08] [CONSUMER] get_finished: sending=set(), recving={0}
+[atom 10:01:08] [CONSUMER] Write-done received for req 0, done_recving now: {0}
+[atom 10:01:08] [CONSUMER] get_finished: sending=set(), recving={0}
+[atom 10:01:08] [CONSUMER] Write-done received for req 0, done_recving now: {0}
+[atom 10:01:08] [CONSUMER] Write-done received for req 0, done_recving now: {0}
+[atom 10:01:08] [CONSUMER] get_finished: sending=set(), recving={0}
+[atom 10:01:08] [CONSUMER] Write-done received for req 0, done_recving now: {0}
+[atom 10:01:08] [CONSUMER] get_finished: sending=set(), recving={0}
+[atom 10:01:08] [CONSUMER] Write-done received for req 0, done_recving now: {0}
+[atom 10:01:08] [CONSUMER] Write-done received for req 0, done_recving now: {0}
+[atom 10:01:08] [PD-TRANSITION] seq 0: num_tokens=16385, num_prompt=16384, blocks=1024, first_token=81, last_5_tids=[5691, 33071, 59140, 524, 81]
+[atom 10:01:08] [PD-FIRST-DECODE] seq 0: num_tokens=16385, blocks=1025, injected_t0=True, last_block_num=1, context_will_be=16385
+[atom 10:01:08] [CONSUMER] get_finished: sending=set(), recving={0}
+[atom 10:01:08] [PD-DECODE] seq 0: comp_tokens=3, new_token=(70,), num_tokens=16387, blocks=1025
+[atom 10:01:16] KV transfer output present in stream output.
+[atom 10:01:16] Engine Core: output send 1 reqs
+[atom 10:01:17] Request 1 arrived, input tokens: 16384, pending requests: 1
+[atom 10:01:17] API: Created request_id=cmpl-3a847099add541089a4a1af224b57a2c, seq_id=1
+INFO:     10.24.112.181:50270 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:01:17] [SCHEDULER-CONSUMER] Queued req 1 for remote KV recv (1024 blocks, slot=-1), transfer_id=1, remote_host=10.24.112.181, remote_handshake_port=6301
+[atom 10:01:17] [SCHEDULER] build_connector_meta: 1 recv, 0 save, id_map={1: 1}
+[atom 10:01:17] [CONSUMER] start_load_kv: 1 reqs_to_recv, id_map={1: 1}
+[atom 10:01:17] [CONSUMER] start_load_kv: 1 reqs_to_recv, id_map={1: 1}
+[atom 10:01:17] [CONSUMER] start_load_kv: 1 reqs_to_recv, id_map={1: 1}
+[atom 10:01:17] [CONSUMER] Sending write_request for req 1 (transfer_id=1) to tcp://10.24.112.181:6301 (handshake_port=6301, dp_rank=0, local_tp=0, remote_tp=0/8), dst_block_ids=[1089, 1090, 1091, 1092, 1093, 1094, 1095, 1096, 1097, 1098], num_regions=284, bytes/block=[64, 3072], num_blocks=300288
+[atom 10:01:17] [CONSUMER] Sending write_request for req 1 (transfer_id=1) to tcp://10.24.112.181:6304 (handshake_port=6301, dp_rank=0, local_tp=3, remote_tp=3/8), dst_block_ids=[1089, 1090, 1091, 1092, 1093, 1094, 1095, 1096, 1097, 1098], num_regions=284, bytes/block=[64, 3072], num_blocks=300288
+[atom 10:01:17] [CONSUMER] start_load_kv: 1 reqs_to_recv, id_map={1: 1}
+[atom 10:01:17] [CONSUMER] Sending write_request for req 1 (transfer_id=1) to tcp://10.24.112.181:6303 (handshake_port=6301, dp_rank=0, local_tp=2, remote_tp=2/8), dst_block_ids=[1089, 1090, 1091, 1092, 1093, 1094, 1095, 1096, 1097, 1098], num_regions=284, bytes/block=[64, 3072], num_blocks=300288
+[atom 10:01:17] [CONSUMER] start_load_kv: 1 reqs_to_recv, id_map={1: 1}
+[atom 10:01:17] [CONSUMER] Sending write_request for req 1 (transfer_id=1) to tcp://10.24.112.181:6306 (handshake_port=6301, dp_rank=0, local_tp=5, remote_tp=5/8), dst_block_ids=[1089, 1090, 1091, 1092, 1093, 1094, 1095, 1096, 1097, 1098], num_regions=284, bytes/block=[64, 3072], num_blocks=300288
+[atom 10:01:17] [CONSUMER] write_request sent for req 1 to tcp://10.24.112.181:6301
+[atom 10:01:17] [CONSUMER] start_load_kv: 1 reqs_to_recv, id_map={1: 1}
+[atom 10:01:17] [CONSUMER] write_request sent for req 1 to tcp://10.24.112.181:6304
+[atom 10:01:17] [CONSUMER] start_load_kv: 1 reqs_to_recv, id_map={1: 1}
+[atom 10:01:17] [CONSUMER] start_load_kv: 1 reqs_to_recv, id_map={1: 1}
+[atom 10:01:17] [CONSUMER] Sending write_request for req 1 (transfer_id=1) to tcp://10.24.112.181:6302 (handshake_port=6301, dp_rank=0, local_tp=1, remote_tp=1/8), dst_block_ids=[1089, 1090, 1091, 1092, 1093, 1094, 1095, 1096, 1097, 1098], num_regions=284, bytes/block=[64, 3072], num_blocks=300288
+[atom 10:01:17] [CONSUMER] write_request sent for req 1 to tcp://10.24.112.181:6303
+[atom 10:01:17] [CONSUMER] Sending write_request for req 1 (transfer_id=1) to tcp://10.24.112.181:6305 (handshake_port=6301, dp_rank=0, local_tp=4, remote_tp=4/8), dst_block_ids=[1089, 1090, 1091, 1092, 1093, 1094, 1095, 1096, 1097, 1098], num_regions=284, bytes/block=[64, 3072], num_blocks=300288
+[atom 10:01:17] [CONSUMER] Sending write_request for req 1 (transfer_id=1) to tcp://10.24.112.181:6308 (handshake_port=6301, dp_rank=0, local_tp=7, remote_tp=7/8), dst_block_ids=[1089, 1090, 1091, 1092, 1093, 1094, 1095, 1096, 1097, 1098], num_regions=284, bytes/block=[64, 3072], num_blocks=300288
+[atom 10:01:17] [CONSUMER] write_request sent for req 1 to tcp://10.24.112.181:6306
+[atom 10:01:17] [CONSUMER] Sending write_request for req 1 (transfer_id=1) to tcp://10.24.112.181:6307 (handshake_port=6301, dp_rank=0, local_tp=6, remote_tp=6/8), dst_block_ids=[1089, 1090, 1091, 1092, 1093, 1094, 1095, 1096, 1097, 1098], num_regions=284, bytes/block=[64, 3072], num_blocks=300288
+[atom 10:01:17] [CONSUMER] write_request sent for req 1 to tcp://10.24.112.181:6302
+[atom 10:01:17] [CONSUMER] write_request sent for req 1 to tcp://10.24.112.181:6305
+[atom 10:01:17] [CONSUMER] write_request sent for req 1 to tcp://10.24.112.181:6308
+[atom 10:01:17] [CONSUMER] write_request sent for req 1 to tcp://10.24.112.181:6307
+[atom 10:01:17] [CONSUMER] Write-done received for req 1, done_recving now: {1}
+[atom 10:01:17] [CONSUMER] get_finished: sending=set(), recving={1}
+[atom 10:01:17] [CONSUMER] Write-done received for req 1, done_recving now: {1}
+[atom 10:01:17] [CONSUMER] Write-done received for req 1, done_recving now: {1}
+[atom 10:01:17] [CONSUMER] get_finished: sending=set(), recving={1}
+[atom 10:01:17] [CONSUMER] Write-done received for req 1, done_recving now: {1}
+[atom 10:01:17] [CONSUMER] get_finished: sending=set(), recving={1}
+[atom 10:01:17] [CONSUMER] Write-done received for req 1, done_recving now: {1}
+[atom 10:01:17] [CONSUMER] Write-done received for req 1, done_recving now: {1}
+[atom 10:01:17] [CONSUMER] get_finished: sending=set(), recving={1}
+[atom 10:01:17] [CONSUMER] Write-done received for req 1, done_recving now: {1}
+[atom 10:01:17] [CONSUMER] get_finished: sending=set(), recving={1}
+[atom 10:01:17] [CONSUMER] Write-done received for req 1, done_recving now: {1}
+[atom 10:01:17] [CONSUMER] Write-done received for req 1, done_recving now: {1}
+[atom 10:01:17] [CONSUMER] get_finished: sending=set(), recving={1}
+[atom 10:01:17] [CONSUMER] Write-done received for req 1, done_recving now: {1}
+[atom 10:01:17] [CONSUMER] Write-done received for req 1, done_recving now: {1}
+[atom 10:01:17] [CONSUMER] get_finished: sending=set(), recving={1}
+[atom 10:01:17] [CONSUMER] Write-done received for req 1, done_recving now: {1}
+[atom 10:01:17] [CONSUMER] get_finished: sending=set(), recving={1}
+[atom 10:01:17] [CONSUMER] Write-done received for req 1, done_recving now: {1}
+[atom 10:01:17] [CONSUMER] get_finished: sending=set(), recving={1}
+[atom 10:01:17] [CONSUMER] Write-done received for req 1, done_recving now: {1}
+[atom 10:01:17] [CONSUMER] Write-done received for req 1, done_recving now: {1}
+[atom 10:01:17] [CONSUMER] get_finished: sending=set(), recving={1}
+[atom 10:01:17] [CONSUMER] Write-done received for req 1, done_recving now: {1}
+[atom 10:01:17] [CONSUMER] get_finished: sending=set(), recving={1}
+[atom 10:01:17] [CONSUMER] Write-done received for req 1, done_recving now: {1}
+[atom 10:01:17] [CONSUMER] Write-done received for req 1, done_recving now: {1}
+[atom 10:01:17] [CONSUMER] Write-done received for req 1, done_recving now: {1}
+[atom 10:01:17] [CONSUMER] get_finished: sending=set(), recving={1}
+[atom 10:01:17] [CONSUMER] Write-done received for req 1, done_recving now: {1}
+[atom 10:01:17] [CONSUMER] Write-done received for req 1, done_recving now: {1}
+[atom 10:01:17] [CONSUMER] get_finished: sending=set(), recving={1}
+[atom 10:01:17] [CONSUMER] get_finished: sending=set(), recving={1}
+[atom 10:01:17] [CONSUMER] Write-done received for req 1, done_recving now: {1}
+[atom 10:01:17] [CONSUMER] get_finished: sending=set(), recving={1}
+[atom 10:01:17] [CONSUMER] Write-done received for req 1, done_recving now: {1}
+[atom 10:01:17] [CONSUMER] Write-done received for req 1, done_recving now: {1}
+[atom 10:01:17] [PD-TRANSITION] seq 1: num_tokens=16385, num_prompt=16384, blocks=1024, first_token=5691, last_5_tids=[117525, 117526, 117527, 117528, 5691]
+[atom 10:01:17] [PD-FIRST-DECODE] seq 1: num_tokens=16385, blocks=1025, injected_t0=True, last_block_num=1, context_will_be=16385
+Process ModelRunner0/8:
+Process ModelRunner3/8:
+Traceback (most recent call last):
+Traceback (most recent call last):
+Process ModelRunner2/8:
+Process ModelRunner5/8:
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+Process ModelRunner1/8:
+  File "/app/ATOM/atom/model_engine/async_proc.py", line 113, in __init__
+    self.busy_loop()
+  File "/app/ATOM/atom/model_engine/async_proc.py", line 173, in busy_loop
+    out = func(*args)
+          ^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_engine/model_runner.py", line 1928, in forward
+    ) = self.prepare_model(batch)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_engine/model_runner.py", line 1733, in prepare_model
+    input_ids = self.tokenID_processor.prepare_input_ids(batch)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_engine/model_runner.py", line 460, in prepare_input_ids
+    new_token_ids = scheduled_tokens[new_curr_indices].reshape(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: cannot reshape array of size 1 into shape (1,2)
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ATOM/atom/model_engine/async_proc.py", line 113, in __init__
+    self.busy_loop()
+  File "/app/ATOM/atom/model_engine/async_proc.py", line 173, in busy_loop
+    out = func(*args)
+          ^^^^^^^^^^^
+Process ModelRunner4/8:
+  File "/opt/venv/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_engine/model_runner.py", line 1928, in forward
+    ) = self.prepare_model(batch)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_engine/model_runner.py", line 1733, in prepare_model
+    input_ids = self.tokenID_processor.prepare_input_ids(batch)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_engine/model_runner.py", line 460, in prepare_input_ids
+    new_token_ids = scheduled_tokens[new_curr_indices].reshape(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: cannot reshape array of size 1 into shape (1,2)
+Process ModelRunner7/8:
+Process ModelRunner6/8:
+Traceback (most recent call last):
+Traceback (most recent call last):
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ATOM/atom/model_engine/async_proc.py", line 113, in __init__
+    self.busy_loop()
+  File "/app/ATOM/atom/model_engine/async_proc.py", line 173, in busy_loop
+    out = func(*args)
+          ^^^^^^^^^^^
+Traceback (most recent call last):
+  File "/opt/venv/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_engine/model_runner.py", line 1928, in forward
+    ) = self.prepare_model(batch)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_engine/model_runner.py", line 1733, in prepare_model
+    input_ids = self.tokenID_processor.prepare_input_ids(batch)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_engine/model_runner.py", line 460, in prepare_input_ids
+    new_token_ids = scheduled_tokens[new_curr_indices].reshape(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: cannot reshape array of size 1 into shape (1,2)
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ATOM/atom/model_engine/async_proc.py", line 113, in __init__
+    self.busy_loop()
+  File "/app/ATOM/atom/model_engine/async_proc.py", line 173, in busy_loop
+    out = func(*args)
+          ^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_engine/model_runner.py", line 1928, in forward
+    ) = self.prepare_model(batch)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_engine/model_runner.py", line 1733, in prepare_model
+    input_ids = self.tokenID_processor.prepare_input_ids(batch)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_engine/model_runner.py", line 460, in prepare_input_ids
+    new_token_ids = scheduled_tokens[new_curr_indices].reshape(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: cannot reshape array of size 1 into shape (1,2)
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ATOM/atom/model_engine/async_proc.py", line 113, in __init__
+    self.busy_loop()
+  File "/app/ATOM/atom/model_engine/async_proc.py", line 173, in busy_loop
+    out = func(*args)
+          ^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_engine/model_runner.py", line 1928, in forward
+    ) = self.prepare_model(batch)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_engine/model_runner.py", line 1733, in prepare_model
+    input_ids = self.tokenID_processor.prepare_input_ids(batch)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_engine/model_runner.py", line 460, in prepare_input_ids
+    new_token_ids = scheduled_tokens[new_curr_indices].reshape(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: cannot reshape array of size 1 into shape (1,2)
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ATOM/atom/model_engine/async_proc.py", line 113, in __init__
+    self.busy_loop()
+  File "/app/ATOM/atom/model_engine/async_proc.py", line 173, in busy_loop
+    out = func(*args)
+          ^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_engine/model_runner.py", line 1928, in forward
+    ) = self.prepare_model(batch)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_engine/model_runner.py", line 1733, in prepare_model
+    input_ids = self.tokenID_processor.prepare_input_ids(batch)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_engine/model_runner.py", line 460, in prepare_input_ids
+    new_token_ids = scheduled_tokens[new_curr_indices].reshape(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: cannot reshape array of size 1 into shape (1,2)
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ATOM/atom/model_engine/async_proc.py", line 113, in __init__
+    self.busy_loop()
+  File "/app/ATOM/atom/model_engine/async_proc.py", line 173, in busy_loop
+    out = func(*args)
+          ^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_engine/model_runner.py", line 1928, in forward
+    ) = self.prepare_model(batch)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_engine/model_runner.py", line 1733, in prepare_model
+    input_ids = self.tokenID_processor.prepare_input_ids(batch)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_engine/model_runner.py", line 460, in prepare_input_ids
+    new_token_ids = scheduled_tokens[new_curr_indices].reshape(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: cannot reshape array of size 1 into shape (1,2)
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/ATOM/atom/model_engine/async_proc.py", line 113, in __init__
+    self.busy_loop()
+  File "/app/ATOM/atom/model_engine/async_proc.py", line 173, in busy_loop
+    out = func(*args)
+          ^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_engine/model_runner.py", line 1928, in forward
+    ) = self.prepare_model(batch)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_engine/model_runner.py", line 1733, in prepare_model
+    input_ids = self.tokenID_processor.prepare_input_ids(batch)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ATOM/atom/model_engine/model_runner.py", line 460, in prepare_input_ids
+    new_token_ids = scheduled_tokens[new_curr_indices].reshape(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: cannot reshape array of size 1 into shape (1,2)
+[atom 10:01:17] Request 2 arrived, input tokens: 16384, pending requests: 2
+[atom 10:01:17] API: Created request_id=cmpl-1f30e9be3dc14d2f875fd71ecbd34b61, seq_id=2
+INFO:     10.24.112.181:50274 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:01:18] Request 3 arrived, input tokens: 16384, pending requests: 3
+[atom 10:01:18] API: Created request_id=cmpl-8c8cee0b9d5b4fa1b36be3e4d1b053e4, seq_id=3
+INFO:     10.24.112.181:50278 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:01:18] Request 4 arrived, input tokens: 16384, pending requests: 4
+[atom 10:01:18] API: Created request_id=cmpl-6399cfc990fc466d864923ab723a3c74, seq_id=4
+INFO:     10.24.112.181:50292 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:01:19] Request 5 arrived, input tokens: 16384, pending requests: 5
+[atom 10:01:19] API: Created request_id=cmpl-8859e65cb653443ba44bb39d43566b5d, seq_id=5
+INFO:     10.24.112.181:50296 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:01:19] Request 6 arrived, input tokens: 16384, pending requests: 6
+[atom 10:01:19] API: Created request_id=cmpl-ee4c1099603047b1b4233100950c4857, seq_id=6
+INFO:     10.24.112.181:50306 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:01:20] Request 7 arrived, input tokens: 16384, pending requests: 7
+[atom 10:01:20] API: Created request_id=cmpl-8626311770224428ac403610245fc1a4, seq_id=7
+INFO:     10.24.112.181:50320 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:01:20] Request 8 arrived, input tokens: 16384, pending requests: 8
+[atom 10:01:20] API: Created request_id=cmpl-55aec7dc28b244faaac72e1f73acf28d, seq_id=8
+INFO:     10.24.112.181:50322 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:01:21] Request 9 arrived, input tokens: 16384, pending requests: 9
+[atom 10:01:21] API: Created request_id=cmpl-29b96fabf0a749c2ba89aacd89cbf44b, seq_id=9
+INFO:     10.24.112.181:50330 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:01:21] Request 10 arrived, input tokens: 16384, pending requests: 10
+[atom 10:01:21] API: Created request_id=cmpl-0a9a64699cf349409722ab4632e8315d, seq_id=10
+INFO:     10.24.112.181:41654 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:01:22] Request 11 arrived, input tokens: 16384, pending requests: 11
+[atom 10:01:22] API: Created request_id=cmpl-12efc39775c8489f87fd805479cd16ae, seq_id=11
+INFO:     10.24.112.181:41666 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:01:22] Request 12 arrived, input tokens: 16384, pending requests: 12
+[atom 10:01:22] API: Created request_id=cmpl-951ac68061ae4753884a6be78225008e, seq_id=12
+INFO:     10.24.112.181:41672 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:01:23] Request 13 arrived, input tokens: 16384, pending requests: 13
+[atom 10:01:23] API: Created request_id=cmpl-4ba766d3deb74562ba345339a3c80b4b, seq_id=13
+INFO:     10.24.112.181:41678 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:01:23] Request 14 arrived, input tokens: 16384, pending requests: 14
+[atom 10:01:23] API: Created request_id=cmpl-ec565960cca24d3cae42d20a0477b5ce, seq_id=14
+INFO:     10.24.112.181:41684 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:01:24] Request 15 arrived, input tokens: 16384, pending requests: 15
+[atom 10:01:24] API: Created request_id=cmpl-13f6d8aed355457cb47a8444f47a38b6, seq_id=15
+INFO:     10.24.112.181:41692 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:01:24] Request 16 arrived, input tokens: 16384, pending requests: 16
+[atom 10:01:24] API: Created request_id=cmpl-f5b8f9ee946945fdba527709f3f7eb38, seq_id=16
+INFO:     10.24.112.181:41700 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:01:25] Request 17 arrived, input tokens: 16384, pending requests: 17
+[atom 10:01:25] API: Created request_id=cmpl-6d5881028b9d4300a93decdfa812be60, seq_id=17
+INFO:     10.24.112.181:41716 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:01:25] Request 18 arrived, input tokens: 16384, pending requests: 18
+[atom 10:01:25] API: Created request_id=cmpl-a9c11e0999ac4865b02d92d7f3a4a45b, seq_id=18
+INFO:     10.24.112.181:41724 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:01:25] Request 19 arrived, input tokens: 16384, pending requests: 19
+[atom 10:01:25] API: Created request_id=cmpl-aa9293126cad4920999f134eca3247a9, seq_id=19
+INFO:     10.24.112.181:41732 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:01:26] Request 20 arrived, input tokens: 16384, pending requests: 20
+[atom 10:01:26] API: Created request_id=cmpl-ef6bc7f0799742d183b6470237822a3f, seq_id=20
+INFO:     10.24.112.181:41748 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:01:26] Request 21 arrived, input tokens: 16384, pending requests: 21
+[atom 10:01:26] API: Created request_id=cmpl-a626c3c11b2c44ab9683e5d0a7227a51, seq_id=21
+INFO:     10.24.112.181:41756 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:01:27] Request 22 arrived, input tokens: 16384, pending requests: 22
+[atom 10:01:27] API: Created request_id=cmpl-049d87e7a5414ddc845d132b4edd012e, seq_id=22
+INFO:     10.24.112.181:41766 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:01:27] Request 23 arrived, input tokens: 16384, pending requests: 23
+[atom 10:01:27] API: Created request_id=cmpl-23dc8e63d358456688d5fc54a98661de, seq_id=23
+INFO:     10.24.112.181:41768 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:01:28] Request 24 arrived, input tokens: 16384, pending requests: 24
+[atom 10:01:28] API: Created request_id=cmpl-7ae2af1858634dca9c78a43fb6ee895b, seq_id=24
+INFO:     10.24.112.181:41772 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:01:28] Request 25 arrived, input tokens: 16384, pending requests: 25
+[atom 10:01:28] API: Created request_id=cmpl-76f4ac3cd4cc40859ea1c91070b04c9c, seq_id=25
+INFO:     10.24.112.181:41780 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:01:29] Request 26 arrived, input tokens: 16384, pending requests: 26
+[atom 10:01:29] API: Created request_id=cmpl-1e55d31658fc48aa86dbb77da05a60ee, seq_id=26
+INFO:     10.24.112.181:41790 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:01:29] AsyncIOProcManager(ModelRunner): [ModelRunner1/8] proc died unexpectedly (exitcode=1), shutting down.
+[atom 10:01:29] AsyncIOProcManager(ModelRunner): shutdown all runners...
+[atom 10:01:29] Request 27 arrived, input tokens: 16384, pending requests: 27
+[atom 10:01:29] API: Created request_id=cmpl-a254aa054452459faa15b3421945c61a, seq_id=27
+INFO:     10.24.112.181:41800 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:01:30] Request 28 arrived, input tokens: 16384, pending requests: 28
+[atom 10:01:30] API: Created request_id=cmpl-f457714616154e10a3608bf96bd14176, seq_id=28
+INFO:     10.24.112.181:41802 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:01:30] Request 29 arrived, input tokens: 16384, pending requests: 29
+[atom 10:01:30] API: Created request_id=cmpl-b5af0c15085a48c5bab7c23b70649e0b, seq_id=29
+INFO:     10.24.112.181:41806 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:01:31] Request 30 arrived, input tokens: 16384, pending requests: 30
+[atom 10:01:31] API: Created request_id=cmpl-7b84cc26589c4b41881c1a2111e3e27a, seq_id=30
+INFO:     10.24.112.181:41818 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:01:31] Request 31 arrived, input tokens: 16384, pending requests: 31
+[atom 10:01:31] API: Created request_id=cmpl-d192e8761382460790d9c90223fadd27, seq_id=31
+INFO:     10.24.112.181:60238 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:01:32] Request 32 arrived, input tokens: 16384, pending requests: 32
+[atom 10:01:32] API: Created request_id=cmpl-e0b95cf643254676b985f526a138827b, seq_id=32
+INFO:     10.24.112.181:60254 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:01:32] Request 33 arrived, input tokens: 16384, pending requests: 33
+[atom 10:01:32] API: Created request_id=cmpl-5bee8e44dd584e50a003df325dda74a3, seq_id=33
+INFO:     10.24.112.181:60262 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:01:33] Request 34 arrived, input tokens: 16384, pending requests: 34
+[atom 10:01:33] API: Created request_id=cmpl-343588046a934ad69c7c6f63a1a70753, seq_id=34
+INFO:     10.24.112.181:60278 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:01:33] Request 35 arrived, input tokens: 16384, pending requests: 35
+[atom 10:01:33] API: Created request_id=cmpl-2ed8e469cb1843fe85422a90959c67c0, seq_id=35
+INFO:     10.24.112.181:60282 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:01:33] AsyncIOProcManager(ModelRunner): All runners are shutdown.
+[atom 10:01:34] Request 36 arrived, input tokens: 16384, pending requests: 36
+[atom 10:01:34] API: Created request_id=cmpl-8a1f287f715e45108192d3c69d09c14b, seq_id=36
+INFO:     10.24.112.181:60286 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:01:34] Request 37 arrived, input tokens: 16384, pending requests: 37
+[atom 10:01:34] API: Created request_id=cmpl-3413c58d2902444ca994fbc06190efa9, seq_id=37
+INFO:     10.24.112.181:60294 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:01:35] Request 38 arrived, input tokens: 16384, pending requests: 38
+[atom 10:01:35] API: Created request_id=cmpl-56e2ff27bc544eaa96109211b97db637, seq_id=38
+INFO:     10.24.112.181:60298 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:01:35] Request 39 arrived, input tokens: 16384, pending requests: 39
+[atom 10:01:35] API: Created request_id=cmpl-1915388965d04e96877a75b8b9404b0e, seq_id=39
+INFO:     10.24.112.181:60308 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:01:35] Request 40 arrived, input tokens: 16384, pending requests: 40
+[atom 10:01:35] API: Created request_id=cmpl-c050fb09c4d64749af4869238d0d746c, seq_id=40
+INFO:     10.24.112.181:60320 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:01:36] Request 41 arrived, input tokens: 16384, pending requests: 41
+[atom 10:01:36] API: Created request_id=cmpl-e90863bebe52482996cfbbfcd1a6de44, seq_id=41
+INFO:     10.24.112.181:60326 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:01:36] Request 42 arrived, input tokens: 16384, pending requests: 42
+[atom 10:01:36] API: Created request_id=cmpl-365a387c28054642aa8590d6f8557247, seq_id=42
+INFO:     10.24.112.181:60336 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:01:37] Request 43 arrived, input tokens: 16384, pending requests: 43
+[atom 10:01:37] API: Created request_id=cmpl-83ac860785c949df846624ebb30f6db6, seq_id=43
+INFO:     10.24.112.181:60344 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:01:37] Request 44 arrived, input tokens: 16384, pending requests: 44
+[atom 10:01:37] API: Created request_id=cmpl-db9ee6f6c33245edb811c852eaff35fb, seq_id=44
+INFO:     10.24.112.181:60346 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:01:38] Request 45 arrived, input tokens: 16384, pending requests: 45
+[atom 10:01:38] API: Created request_id=cmpl-25bdbeb006c94c81bd7e46918f5ea8d2, seq_id=45
+INFO:     10.24.112.181:60348 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:01:38] Request 46 arrived, input tokens: 16384, pending requests: 46
+[atom 10:01:38] API: Created request_id=cmpl-1b2ef960cbf14a8a850f793209220bcb, seq_id=46
+INFO:     10.24.112.181:60356 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:01:39] Request 47 arrived, input tokens: 16384, pending requests: 47
+[atom 10:01:39] API: Created request_id=cmpl-40bd68115b5c42ea82b4d7b8b2e11d42, seq_id=47
+INFO:     10.24.112.181:60368 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:01:39] Request 48 arrived, input tokens: 16384, pending requests: 48
+[atom 10:01:39] API: Created request_id=cmpl-b6e17745ed574af89cc252269d33b592, seq_id=48
+INFO:     10.24.112.181:60370 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:01:40] Request 49 arrived, input tokens: 16384, pending requests: 49
+[atom 10:01:40] API: Created request_id=cmpl-c315006283ad4450afa8ba96f1d14716, seq_id=49
+INFO:     10.24.112.181:60372 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:01:40] Request 50 arrived, input tokens: 16384, pending requests: 50
+[atom 10:01:40] API: Created request_id=cmpl-9a697b16d4184ad39b94ee67854f858f, seq_id=50
+INFO:     10.24.112.181:60388 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:01:41] Request 51 arrived, input tokens: 16384, pending requests: 51
+[atom 10:01:41] API: Created request_id=cmpl-bc7b6df7d03c4e85a3fa9964c473eee0, seq_id=51
+INFO:     10.24.112.181:60404 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:01:41] Request 52 arrived, input tokens: 16384, pending requests: 52
+[atom 10:01:41] API: Created request_id=cmpl-53881659b4db4e8ca9780d2c88117cd0, seq_id=52
+INFO:     10.24.112.181:44860 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:01:42] Request 53 arrived, input tokens: 16384, pending requests: 53
+[atom 10:01:42] API: Created request_id=cmpl-683cb1d8944b48e7bc50e6e745059001, seq_id=53
+INFO:     10.24.112.181:44872 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:01:42] Request 54 arrived, input tokens: 16384, pending requests: 54
+[atom 10:01:42] API: Created request_id=cmpl-f7aea9ef5d3a4f6881439cc68e604954, seq_id=54
+INFO:     10.24.112.181:44876 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:01:43] Request 55 arrived, input tokens: 16384, pending requests: 55
+[atom 10:01:43] API: Created request_id=cmpl-02020e0ffe5c466e85f3bdf21b87e74a, seq_id=55
+INFO:     10.24.112.181:44878 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:01:43] Request 56 arrived, input tokens: 16384, pending requests: 56
+[atom 10:01:43] API: Created request_id=cmpl-212a6a84b1eb42719d1834d723251629, seq_id=56
+INFO:     10.24.112.181:44880 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:01:44] Request 57 arrived, input tokens: 16384, pending requests: 57
+[atom 10:01:44] API: Created request_id=cmpl-804db1845cf54163b4aa94332f61aba5, seq_id=57
+INFO:     10.24.112.181:44896 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:01:44] Request 58 arrived, input tokens: 16384, pending requests: 58
+[atom 10:01:44] API: Created request_id=cmpl-3b182b86e7d34b93a709ba7383da19b4, seq_id=58
+INFO:     10.24.112.181:44900 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:01:44] Request 59 arrived, input tokens: 16384, pending requests: 59
+[atom 10:01:44] API: Created request_id=cmpl-07d297a157c84f2086a065ad648d6614, seq_id=59
+INFO:     10.24.112.181:44912 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:01:45] Request 60 arrived, input tokens: 16384, pending requests: 60
+[atom 10:01:45] API: Created request_id=cmpl-34ad562033a2426988a3e3d16a0c0f19, seq_id=60
+INFO:     10.24.112.181:44920 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:01:45] Request 61 arrived, input tokens: 16384, pending requests: 61
+[atom 10:01:45] API: Created request_id=cmpl-09d5052fab5a428e87d85eeef714ade1, seq_id=61
+INFO:     10.24.112.181:44928 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:01:46] Request 62 arrived, input tokens: 16384, pending requests: 62
+[atom 10:01:46] API: Created request_id=cmpl-76e3fc27d5464e299853b72cecabe00a, seq_id=62
+INFO:     10.24.112.181:44932 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:01:46] Request 63 arrived, input tokens: 16384, pending requests: 63
+[atom 10:01:46] API: Created request_id=cmpl-9ab52861ac104b318253d7ce9c3ef8e9, seq_id=63
+INFO:     10.24.112.181:44936 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:01:47] Request 64 arrived, input tokens: 16384, pending requests: 64
+[atom 10:01:47] API: Created request_id=cmpl-e42dacad580e4ecf8e98c570c0392da1, seq_id=64
+INFO:     10.24.112.181:44944 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:03:18] Request 65 arrived, input tokens: 16384, pending requests: 65
+[atom 10:03:18] API: Created request_id=cmpl-22a82abe2f394dd4a60b46030a7aff46, seq_id=65
+INFO:     10.24.112.181:44966 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:03:18] Request 66 arrived, input tokens: 16384, pending requests: 66
+[atom 10:03:18] API: Created request_id=cmpl-fc5ee84a2ca04874addbabd5df2f7108, seq_id=66
+INFO:     10.24.112.181:44982 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:03:19] Request 67 arrived, input tokens: 16384, pending requests: 67
+[atom 10:03:19] API: Created request_id=cmpl-f05d43b928fe482a8bd78dec599b75d3, seq_id=67
+INFO:     10.24.112.181:44988 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:03:19] Request 68 arrived, input tokens: 16384, pending requests: 68
+[atom 10:03:19] API: Created request_id=cmpl-682bd50d24ef49d58d731dda14c0d3fe, seq_id=68
+INFO:     10.24.112.181:45002 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:03:20] Request 69 arrived, input tokens: 16384, pending requests: 69
+[atom 10:03:20] API: Created request_id=cmpl-c75be9055aa845838d13102d79b22261, seq_id=69
+INFO:     10.24.112.181:45016 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:03:20] Request 70 arrived, input tokens: 16384, pending requests: 70
+[atom 10:03:20] API: Created request_id=cmpl-b086cb1cf2374ba78a4466476947273c, seq_id=70
+INFO:     10.24.112.181:45032 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:03:20] Request 71 arrived, input tokens: 16384, pending requests: 71
+[atom 10:03:20] API: Created request_id=cmpl-e24b90328fe64ca395c5b31ef7f9047e, seq_id=71
+INFO:     10.24.112.181:45046 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:03:21] Request 72 arrived, input tokens: 16384, pending requests: 72
+[atom 10:03:21] API: Created request_id=cmpl-3026316ad8924bcdb41b7146cd201019, seq_id=72
+INFO:     10.24.112.181:45052 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:03:21] Request 73 arrived, input tokens: 16384, pending requests: 73
+[atom 10:03:21] API: Created request_id=cmpl-a7cbe0a9de6f4b72911974da6f7df65f, seq_id=73
+INFO:     10.24.112.181:40218 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:03:22] Request 74 arrived, input tokens: 16384, pending requests: 74
+[atom 10:03:22] API: Created request_id=cmpl-a62b041d274243b9a9b4cf40e53859db, seq_id=74
+INFO:     10.24.112.181:40228 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:03:22] Request 75 arrived, input tokens: 16384, pending requests: 75
+[atom 10:03:22] API: Created request_id=cmpl-08ccd0d0843746b28f4530d5f2b5ac14, seq_id=75
+INFO:     10.24.112.181:40234 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:03:23] Request 76 arrived, input tokens: 16384, pending requests: 76
+[atom 10:03:23] API: Created request_id=cmpl-789ec611f6da42a99efb5edf27e6c78c, seq_id=76
+INFO:     10.24.112.181:40244 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:03:23] Request 77 arrived, input tokens: 16384, pending requests: 77
+[atom 10:03:23] API: Created request_id=cmpl-6d2f46c616454105bd35f63a2857607a, seq_id=77
+INFO:     10.24.112.181:40252 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:03:24] Request 78 arrived, input tokens: 16384, pending requests: 78
+[atom 10:03:24] API: Created request_id=cmpl-4d93af0a5f424905b097cbd07368f96a, seq_id=78
+INFO:     10.24.112.181:40266 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:03:24] Request 79 arrived, input tokens: 16384, pending requests: 79
+[atom 10:03:24] API: Created request_id=cmpl-71d9121bb9a8433f91787bd3ffb532d7, seq_id=79
+INFO:     10.24.112.181:40268 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:03:25] Request 80 arrived, input tokens: 16384, pending requests: 80
+[atom 10:03:25] API: Created request_id=cmpl-15de422026364d9eaab359bea675ea87, seq_id=80
+INFO:     10.24.112.181:40284 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:03:25] Request 81 arrived, input tokens: 16384, pending requests: 81
+[atom 10:03:25] API: Created request_id=cmpl-6aa7ce6a68da42dba52daf1a127cdf0f, seq_id=81
+INFO:     10.24.112.181:40292 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:03:26] Request 82 arrived, input tokens: 16384, pending requests: 82
+[atom 10:03:26] API: Created request_id=cmpl-804c4399119f472bba4aaaf5e37ef6af, seq_id=82
+INFO:     10.24.112.181:40300 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:03:26] Request 83 arrived, input tokens: 16384, pending requests: 83
+[atom 10:03:26] API: Created request_id=cmpl-1b0e7d2d102c4b198feaa53a1583f693, seq_id=83
+INFO:     10.24.112.181:40302 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:03:27] Request 84 arrived, input tokens: 16384, pending requests: 84
+[atom 10:03:27] API: Created request_id=cmpl-7cc396da6e544e33ac256861f13821f5, seq_id=84
+INFO:     10.24.112.181:40306 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:03:27] Request 85 arrived, input tokens: 16384, pending requests: 85
+[atom 10:03:27] API: Created request_id=cmpl-f06130c407b24b548209dbfc1969f7f5, seq_id=85
+INFO:     10.24.112.181:40320 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:03:28] Request 86 arrived, input tokens: 16384, pending requests: 86
+[atom 10:03:28] API: Created request_id=cmpl-cb6d09851b294b4ba2761c77e711e123, seq_id=86
+INFO:     10.24.112.181:40336 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:03:28] Request 87 arrived, input tokens: 16384, pending requests: 87
+[atom 10:03:28] API: Created request_id=cmpl-c9ddec8b2f3b42d891dc7e420d5da9bb, seq_id=87
+INFO:     10.24.112.181:40342 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:03:29] Request 88 arrived, input tokens: 16384, pending requests: 88
+[atom 10:03:29] API: Created request_id=cmpl-43feb8c7d2de44b4a43b153f535858f4, seq_id=88
+INFO:     10.24.112.181:40348 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:03:29] Request 89 arrived, input tokens: 16384, pending requests: 89
+[atom 10:03:29] API: Created request_id=cmpl-aa8b66a7bcdb4963a2a3b144de082b28, seq_id=89
+INFO:     10.24.112.181:40360 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:03:30] Request 90 arrived, input tokens: 16384, pending requests: 90
+[atom 10:03:30] API: Created request_id=cmpl-e725046b6a984fd0af18a172e920f5df, seq_id=90
+INFO:     10.24.112.181:40368 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:03:30] Request 91 arrived, input tokens: 16384, pending requests: 91
+[atom 10:03:30] API: Created request_id=cmpl-08a8e52469e14776b5eb1dfc2d67314a, seq_id=91
+INFO:     10.24.112.181:40376 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:03:31] Request 92 arrived, input tokens: 16384, pending requests: 92
+[atom 10:03:31] API: Created request_id=cmpl-ff258f18ef3342cd9d7053cd1860ebac, seq_id=92
+INFO:     10.24.112.181:40392 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:03:31] Request 93 arrived, input tokens: 16384, pending requests: 93
+[atom 10:03:31] API: Created request_id=cmpl-6011d57f22a04323aa1a13a1c4f04395, seq_id=93
+INFO:     10.24.112.181:38444 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:03:32] Request 94 arrived, input tokens: 16384, pending requests: 94
+[atom 10:03:32] API: Created request_id=cmpl-844cba8148bb48f4b69396245fd85373, seq_id=94
+INFO:     10.24.112.181:38450 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:03:32] Request 95 arrived, input tokens: 16384, pending requests: 95
+[atom 10:03:32] API: Created request_id=cmpl-e70608b8c10b478d9ccf52239de68010, seq_id=95
+INFO:     10.24.112.181:38462 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:03:33] Request 96 arrived, input tokens: 16384, pending requests: 96
+[atom 10:03:33] API: Created request_id=cmpl-9f36dc6f86b64bdc948acc65eb020ad7, seq_id=96
+INFO:     10.24.112.181:38476 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:03:33] Request 97 arrived, input tokens: 16384, pending requests: 97
+[atom 10:03:33] API: Created request_id=cmpl-214e53e7c6bc4836bf526a0fb3df0063, seq_id=97
+INFO:     10.24.112.181:38480 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:03:34] Request 98 arrived, input tokens: 16384, pending requests: 98
+[atom 10:03:34] API: Created request_id=cmpl-02ad92d6d9ad495fbf990f2c580ef993, seq_id=98
+INFO:     10.24.112.181:38492 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:03:34] Request 99 arrived, input tokens: 16384, pending requests: 99
+[atom 10:03:34] API: Created request_id=cmpl-c020e642b9904c64a7f78562e50be6f0, seq_id=99
+INFO:     10.24.112.181:38500 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:03:35] Request 100 arrived, input tokens: 16384, pending requests: 100
+[atom 10:03:35] API: Created request_id=cmpl-c1fe2031c0f541ffb1f7ee779ebaba56, seq_id=100
+INFO:     10.24.112.181:38502 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:03:35] Request 101 arrived, input tokens: 16384, pending requests: 101
+[atom 10:03:35] API: Created request_id=cmpl-98629775b34046f48ff1aabc02430133, seq_id=101
+INFO:     10.24.112.181:38510 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:03:36] Request 102 arrived, input tokens: 16384, pending requests: 102
+[atom 10:03:36] API: Created request_id=cmpl-92a740fb4f93479491a33d40003caa3a, seq_id=102
+INFO:     10.24.112.181:38512 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:03:36] Request 103 arrived, input tokens: 16384, pending requests: 103
+[atom 10:03:36] API: Created request_id=cmpl-5956151d2f25470788c35421bd1855e5, seq_id=103
+INFO:     10.24.112.181:38526 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:03:37] Request 104 arrived, input tokens: 16384, pending requests: 104
+[atom 10:03:37] API: Created request_id=cmpl-ddddf368f1974267a4ae5c427adcf17f, seq_id=104
+INFO:     10.24.112.181:38532 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:03:37] Request 105 arrived, input tokens: 16384, pending requests: 105
+[atom 10:03:37] API: Created request_id=cmpl-df3d95dcec5048a7996c40fb653539f6, seq_id=105
+INFO:     10.24.112.181:38542 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:03:38] Request 106 arrived, input tokens: 16384, pending requests: 106
+[atom 10:03:38] API: Created request_id=cmpl-2f631c802a7a4936b5ffe774915e9baa, seq_id=106
+INFO:     10.24.112.181:38548 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:03:38] Request 107 arrived, input tokens: 16384, pending requests: 107
+[atom 10:03:38] API: Created request_id=cmpl-3bd2c3ed53f1457f9fc784ac2cb8670d, seq_id=107
+INFO:     10.24.112.181:38560 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:03:38] Request 108 arrived, input tokens: 16384, pending requests: 108
+[atom 10:03:38] API: Created request_id=cmpl-8c37f302a1454f82922023958fa7a266, seq_id=108
+INFO:     10.24.112.181:38570 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:03:39] Request 109 arrived, input tokens: 16384, pending requests: 109
+[atom 10:03:39] API: Created request_id=cmpl-6e94964b1df347d4bf05a3acb61f7518, seq_id=109
+INFO:     10.24.112.181:38574 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:03:39] Request 110 arrived, input tokens: 16384, pending requests: 110
+[atom 10:03:39] API: Created request_id=cmpl-69458dc48052464988dbf280885fd6a7, seq_id=110
+INFO:     10.24.112.181:38580 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:03:40] Request 111 arrived, input tokens: 16384, pending requests: 111
+[atom 10:03:40] API: Created request_id=cmpl-cd196a75d5864037b12992f966937ba3, seq_id=111
+INFO:     10.24.112.181:38594 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:03:40] Request 112 arrived, input tokens: 16384, pending requests: 112
+[atom 10:03:40] API: Created request_id=cmpl-437f145d26a749ab80ed4694d1ab00e5, seq_id=112
+INFO:     10.24.112.181:38604 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:03:41] Request 113 arrived, input tokens: 16384, pending requests: 113
+[atom 10:03:41] API: Created request_id=cmpl-dfa3e5052ce243c3b4852b94f95a433a, seq_id=113
+INFO:     10.24.112.181:38620 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:03:41] Request 114 arrived, input tokens: 16384, pending requests: 114
+[atom 10:03:41] API: Created request_id=cmpl-37a1c06a0c824a81a0356adf6017d30a, seq_id=114
+INFO:     10.24.112.181:52042 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:03:42] Request 115 arrived, input tokens: 16384, pending requests: 115
+[atom 10:03:42] API: Created request_id=cmpl-14b30686fba2427db1c7cf371ae483ec, seq_id=115
+INFO:     10.24.112.181:52044 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:03:42] Request 116 arrived, input tokens: 16384, pending requests: 116
+[atom 10:03:42] API: Created request_id=cmpl-5883a4965ab5454890d53b80b56d9d33, seq_id=116
+INFO:     10.24.112.181:52048 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:03:43] Request 117 arrived, input tokens: 16384, pending requests: 117
+[atom 10:03:43] API: Created request_id=cmpl-3298a2dce6354f4389b547fbe190b2cc, seq_id=117
+INFO:     10.24.112.181:52052 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:03:43] Request 118 arrived, input tokens: 16384, pending requests: 118
+[atom 10:03:43] API: Created request_id=cmpl-bebd847265da40f2b46ff41876ac679a, seq_id=118
+INFO:     10.24.112.181:52060 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:03:44] Request 119 arrived, input tokens: 16384, pending requests: 119
+[atom 10:03:44] API: Created request_id=cmpl-f55b20b5e34140619bec40601b2a27d1, seq_id=119
+INFO:     10.24.112.181:52070 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:03:44] Request 120 arrived, input tokens: 16384, pending requests: 120
+[atom 10:03:44] API: Created request_id=cmpl-a34ae4fd49b14c0f956d530632c5f25e, seq_id=120
+INFO:     10.24.112.181:52074 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:03:45] Request 121 arrived, input tokens: 16384, pending requests: 121
+[atom 10:03:45] API: Created request_id=cmpl-3c849d2ce308405591a3f69f762dfd7a, seq_id=121
+INFO:     10.24.112.181:52084 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:03:45] Request 122 arrived, input tokens: 16384, pending requests: 122
+[atom 10:03:45] API: Created request_id=cmpl-0db6da26a13346f685d907f50b3d0d2c, seq_id=122
+INFO:     10.24.112.181:52086 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:03:46] Request 123 arrived, input tokens: 16384, pending requests: 123
+[atom 10:03:46] API: Created request_id=cmpl-512d62689fbb47878d3e72eb5e8cce78, seq_id=123
+INFO:     10.24.112.181:52102 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:03:46] Request 124 arrived, input tokens: 16384, pending requests: 124
+[atom 10:03:46] API: Created request_id=cmpl-1b671054a3d143f798454fbd54a7f391, seq_id=124
+INFO:     10.24.112.181:52108 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:03:47] Request 125 arrived, input tokens: 16384, pending requests: 125
+[atom 10:03:47] API: Created request_id=cmpl-0503e572a1da444095b9fa78e9fb884c, seq_id=125
+INFO:     10.24.112.181:52110 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:03:47] Request 126 arrived, input tokens: 16384, pending requests: 126
+[atom 10:03:47] API: Created request_id=cmpl-0fdc77ca7924434c9132bcb05e07789b, seq_id=126
+INFO:     10.24.112.181:52122 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:03:47] Request 127 arrived, input tokens: 16384, pending requests: 127
+[atom 10:03:47] API: Created request_id=cmpl-38bddc236a804fcc99840ec55b12e862, seq_id=127
+INFO:     10.24.112.181:52124 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:03:48] Request 128 arrived, input tokens: 16384, pending requests: 128
+[atom 10:03:48] API: Created request_id=cmpl-1b2f9685aca04d00b45f0cf7f05df7ac, seq_id=128
+INFO:     10.24.112.181:52134 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:05:18] Request 129 arrived, input tokens: 16384, pending requests: 129
+[atom 10:05:18] API: Created request_id=cmpl-52894b20b5024d75a023001fd8ba6cb8, seq_id=129
+INFO:     10.24.112.181:33200 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:05:19] Request 130 arrived, input tokens: 16384, pending requests: 130
+[atom 10:05:19] API: Created request_id=cmpl-2010d6ce33bf41afa3e57d3226a35010, seq_id=130
+INFO:     10.24.112.181:33212 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:05:19] Request 131 arrived, input tokens: 16384, pending requests: 131
+[atom 10:05:19] API: Created request_id=cmpl-d1312afc2e45467c9572ce24b16d49c2, seq_id=131
+INFO:     10.24.112.181:33224 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:05:20] Request 132 arrived, input tokens: 16384, pending requests: 132
+[atom 10:05:20] API: Created request_id=cmpl-6be6edf3dbd94d53ae39b0aed087a0cd, seq_id=132
+INFO:     10.24.112.181:33232 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:05:20] Request 133 arrived, input tokens: 16384, pending requests: 133
+[atom 10:05:20] API: Created request_id=cmpl-96e74d1fc5ff4442969eafa14e26a318, seq_id=133
+INFO:     10.24.112.181:33238 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:05:21] Request 134 arrived, input tokens: 16384, pending requests: 134
+[atom 10:05:21] API: Created request_id=cmpl-c211168e11e446338c8bcf0980238eec, seq_id=134
+INFO:     10.24.112.181:33244 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:05:21] Request 135 arrived, input tokens: 16384, pending requests: 135
+[atom 10:05:21] API: Created request_id=cmpl-7100d121edfd49aca24e903808f38503, seq_id=135
+INFO:     10.24.112.181:39660 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:05:22] Request 136 arrived, input tokens: 16384, pending requests: 136
+[atom 10:05:22] API: Created request_id=cmpl-85ad29df86ce4e29b23b2842028a88d7, seq_id=136
+INFO:     10.24.112.181:39666 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:05:22] Request 137 arrived, input tokens: 16384, pending requests: 137
+[atom 10:05:22] API: Created request_id=cmpl-d85d2ebcb6f144d8abfd1abd42760e7b, seq_id=137
+INFO:     10.24.112.181:39670 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:05:23] Request 138 arrived, input tokens: 16384, pending requests: 138
+[atom 10:05:23] API: Created request_id=cmpl-7d33521116fc42f7b21c0988d1c7da76, seq_id=138
+INFO:     10.24.112.181:39680 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:05:23] Request 139 arrived, input tokens: 16384, pending requests: 139
+[atom 10:05:23] API: Created request_id=cmpl-dd3ea2042b864f4887179c6e1e392ad2, seq_id=139
+INFO:     10.24.112.181:39682 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:05:24] Request 140 arrived, input tokens: 16384, pending requests: 140
+[atom 10:05:24] API: Created request_id=cmpl-e258d7aec7dd4827bc9654cd7d6ca7ba, seq_id=140
+INFO:     10.24.112.181:39694 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:05:24] Request 141 arrived, input tokens: 16384, pending requests: 141
+[atom 10:05:24] API: Created request_id=cmpl-186bcd8576a84579bad1d48efcd0d889, seq_id=141
+INFO:     10.24.112.181:39710 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:05:25] Request 142 arrived, input tokens: 16384, pending requests: 142
+[atom 10:05:25] API: Created request_id=cmpl-d7cbb36ac32241cd9d4c982e62c6137d, seq_id=142
+INFO:     10.24.112.181:39714 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:05:25] Request 143 arrived, input tokens: 16384, pending requests: 143
+[atom 10:05:25] API: Created request_id=cmpl-a0d59db56ad24f8ea134afd7e641d133, seq_id=143
+INFO:     10.24.112.181:39724 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:05:26] Request 144 arrived, input tokens: 16384, pending requests: 144
+[atom 10:05:26] API: Created request_id=cmpl-35dc4fefc3b04e9c965e097c2f916188, seq_id=144
+INFO:     10.24.112.181:39740 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:05:26] Request 145 arrived, input tokens: 16384, pending requests: 145
+[atom 10:05:26] API: Created request_id=cmpl-ffedca9ce78a4ed7a12bcd052b4a7406, seq_id=145
+INFO:     10.24.112.181:39754 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:05:27] Request 146 arrived, input tokens: 16384, pending requests: 146
+[atom 10:05:27] API: Created request_id=cmpl-49badf0e907a4a02a20d5faca05c37af, seq_id=146
+INFO:     10.24.112.181:39768 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:05:27] Request 147 arrived, input tokens: 16384, pending requests: 147
+[atom 10:05:27] API: Created request_id=cmpl-a5f34b5272924e15b199de11af49ea13, seq_id=147
+INFO:     10.24.112.181:39772 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:05:28] Request 148 arrived, input tokens: 16384, pending requests: 148
+[atom 10:05:28] API: Created request_id=cmpl-32eb34ed502e42f19033fc9500a8eb02, seq_id=148
+INFO:     10.24.112.181:39782 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:05:28] Request 149 arrived, input tokens: 16384, pending requests: 149
+[atom 10:05:28] API: Created request_id=cmpl-3e3516318d6f49379fde77387b5445d8, seq_id=149
+INFO:     10.24.112.181:39786 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:05:29] Request 150 arrived, input tokens: 16384, pending requests: 150
+[atom 10:05:29] API: Created request_id=cmpl-dc3208e284ee45e4be88fce75b3c5fe0, seq_id=150
+INFO:     10.24.112.181:39800 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:05:29] Request 151 arrived, input tokens: 16384, pending requests: 151
+[atom 10:05:29] API: Created request_id=cmpl-9ca7a68c037b4c7c8c943f06e7124be6, seq_id=151
+INFO:     10.24.112.181:39816 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:05:29] Request 152 arrived, input tokens: 16384, pending requests: 152
+[atom 10:05:29] API: Created request_id=cmpl-c316bf1abb0848e593cdd55a8cba0e65, seq_id=152
+INFO:     10.24.112.181:39830 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:05:30] Request 153 arrived, input tokens: 16384, pending requests: 153
+[atom 10:05:30] API: Created request_id=cmpl-a729537269f84b25956a2b615f2c549f, seq_id=153
+INFO:     10.24.112.181:39846 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:05:30] Request 154 arrived, input tokens: 16384, pending requests: 154
+[atom 10:05:30] API: Created request_id=cmpl-3f38fd22968643c0bd868fb3017d0f98, seq_id=154
+INFO:     10.24.112.181:39860 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:05:31] Request 155 arrived, input tokens: 16384, pending requests: 155
+[atom 10:05:31] API: Created request_id=cmpl-5d66c9f4be074046b8a3649ba91fe3b6, seq_id=155
+INFO:     10.24.112.181:39876 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:05:32] Request 156 arrived, input tokens: 16384, pending requests: 156
+[atom 10:05:32] API: Created request_id=cmpl-bef94ede5f194efe9367fd713c2358bc, seq_id=156
+INFO:     10.24.112.181:39142 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:05:32] Request 157 arrived, input tokens: 16384, pending requests: 157
+[atom 10:05:32] API: Created request_id=cmpl-fb66962d5efa4c51b3a710271a7b4816, seq_id=157
+INFO:     10.24.112.181:39154 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:05:32] Request 158 arrived, input tokens: 16384, pending requests: 158
+[atom 10:05:32] API: Created request_id=cmpl-8c9566eb7f914a2596bc7efb0966abf0, seq_id=158
+INFO:     10.24.112.181:39158 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:05:33] Request 159 arrived, input tokens: 16384, pending requests: 159
+[atom 10:05:33] API: Created request_id=cmpl-a25b0d76c2a245568e1adc638aeb1b9f, seq_id=159
+INFO:     10.24.112.181:39170 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:05:33] Request 160 arrived, input tokens: 16384, pending requests: 160
+[atom 10:05:33] API: Created request_id=cmpl-5a07d430ef9f419c9b8f6eb314d4b002, seq_id=160
+INFO:     10.24.112.181:39174 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:05:34] Request 161 arrived, input tokens: 16384, pending requests: 161
+[atom 10:05:34] API: Created request_id=cmpl-39f8654db656452997a96b12176ed49b, seq_id=161
+INFO:     10.24.112.181:39190 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:05:34] Request 162 arrived, input tokens: 16384, pending requests: 162
+[atom 10:05:34] API: Created request_id=cmpl-e2ab7af2497d47319c0d0a613051ae5c, seq_id=162
+INFO:     10.24.112.181:39192 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:05:35] Request 163 arrived, input tokens: 16384, pending requests: 163
+[atom 10:05:35] API: Created request_id=cmpl-56b5f2f77af44c9eb6da4809fdb0f4fc, seq_id=163
+INFO:     10.24.112.181:39204 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:05:35] Request 164 arrived, input tokens: 16384, pending requests: 164
+[atom 10:05:35] API: Created request_id=cmpl-7fcf4ed4c14247cea6e243b7cf5e7b4c, seq_id=164
+INFO:     10.24.112.181:39214 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:05:36] Request 165 arrived, input tokens: 16384, pending requests: 165
+[atom 10:05:36] API: Created request_id=cmpl-b8b4b5a285054c4d89d4e787672990c3, seq_id=165
+INFO:     10.24.112.181:39226 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:05:36] Request 166 arrived, input tokens: 16384, pending requests: 166
+[atom 10:05:36] API: Created request_id=cmpl-cc16272d5d4b47dd89f70ee5983d9fa1, seq_id=166
+INFO:     10.24.112.181:39236 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:05:37] Request 167 arrived, input tokens: 16384, pending requests: 167
+[atom 10:05:37] API: Created request_id=cmpl-e3a5d05c1089407a865740eb1a28055f, seq_id=167
+INFO:     10.24.112.181:39250 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:05:37] Request 168 arrived, input tokens: 16384, pending requests: 168
+[atom 10:05:37] API: Created request_id=cmpl-9c900559ab3c4a27983fbbb8399823de, seq_id=168
+INFO:     10.24.112.181:39254 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:05:38] Request 169 arrived, input tokens: 16384, pending requests: 169
+[atom 10:05:38] API: Created request_id=cmpl-07b222807953497f9d3815eabec39d76, seq_id=169
+INFO:     10.24.112.181:39256 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:05:38] Request 170 arrived, input tokens: 16384, pending requests: 170
+[atom 10:05:38] API: Created request_id=cmpl-cccb263f40f84915957f7aaddda14c87, seq_id=170
+INFO:     10.24.112.181:39262 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:05:39] Request 171 arrived, input tokens: 16384, pending requests: 171
+[atom 10:05:39] API: Created request_id=cmpl-a4a4ee4c9a9c4ea9b370b63118386a7f, seq_id=171
+INFO:     10.24.112.181:39274 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:05:39] Request 172 arrived, input tokens: 16384, pending requests: 172
+[atom 10:05:39] API: Created request_id=cmpl-6d9a38f5ff754c1da6afe44177f33fcf, seq_id=172
+INFO:     10.24.112.181:39284 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:05:40] Request 173 arrived, input tokens: 16384, pending requests: 173
+[atom 10:05:40] API: Created request_id=cmpl-275f1f4f3c33456d9990eb8efdbdbfb6, seq_id=173
+INFO:     10.24.112.181:39290 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:05:40] Request 174 arrived, input tokens: 16384, pending requests: 174
+[atom 10:05:40] API: Created request_id=cmpl-a84c193cf23446eda73d00cb71880013, seq_id=174
+INFO:     10.24.112.181:39298 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:05:41] Request 175 arrived, input tokens: 16384, pending requests: 175
+[atom 10:05:41] API: Created request_id=cmpl-4643ab2f83c74c309755acf226af6d16, seq_id=175
+INFO:     10.24.112.181:39312 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:05:41] Request 176 arrived, input tokens: 16384, pending requests: 176
+[atom 10:05:41] API: Created request_id=cmpl-10ae05ded21d49b8a5b8d6e7e79e7474, seq_id=176
+INFO:     10.24.112.181:54536 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:05:42] Request 177 arrived, input tokens: 16384, pending requests: 177
+[atom 10:05:42] API: Created request_id=cmpl-546580d1c32342d7b19263fc00aa9599, seq_id=177
+INFO:     10.24.112.181:54546 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:05:42] Request 178 arrived, input tokens: 16384, pending requests: 178
+[atom 10:05:42] API: Created request_id=cmpl-dde66c8e6dd142aaae39e4dcdf4b309d, seq_id=178
+INFO:     10.24.112.181:54550 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:05:43] Request 179 arrived, input tokens: 16384, pending requests: 179
+[atom 10:05:43] API: Created request_id=cmpl-9a465e6c21404538b424635111144c25, seq_id=179
+INFO:     10.24.112.181:54556 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:05:43] Request 180 arrived, input tokens: 16384, pending requests: 180
+[atom 10:05:43] API: Created request_id=cmpl-d65911c43ad24cfcade7a2c37ea07a13, seq_id=180
+INFO:     10.24.112.181:54570 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:05:44] Request 181 arrived, input tokens: 16384, pending requests: 181
+[atom 10:05:44] API: Created request_id=cmpl-8549b276eed5475e8e68b444cc951bbf, seq_id=181
+INFO:     10.24.112.181:54584 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:05:44] Request 182 arrived, input tokens: 16384, pending requests: 182
+[atom 10:05:44] API: Created request_id=cmpl-9202da06fea54b8081dc4a91b161ff17, seq_id=182
+INFO:     10.24.112.181:54594 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:05:45] Request 183 arrived, input tokens: 16384, pending requests: 183
+[atom 10:05:45] API: Created request_id=cmpl-11f22880921b49b5bcbb01d5dbf4ebf4, seq_id=183
+INFO:     10.24.112.181:54604 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:05:45] Request 184 arrived, input tokens: 16384, pending requests: 184
+[atom 10:05:45] API: Created request_id=cmpl-4a51d5422a434d4f9515ccbda7f03aa2, seq_id=184
+INFO:     10.24.112.181:54606 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:05:46] Request 185 arrived, input tokens: 16384, pending requests: 185
+[atom 10:05:46] API: Created request_id=cmpl-2f419fb6b76c4e9f9ce074581b049570, seq_id=185
+INFO:     10.24.112.181:54616 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:05:46] Request 186 arrived, input tokens: 16384, pending requests: 186
+[atom 10:05:46] API: Created request_id=cmpl-c3cae4a8185d409fb0f8100d30ff4aa4, seq_id=186
+INFO:     10.24.112.181:54620 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:05:47] Request 187 arrived, input tokens: 16384, pending requests: 187
+[atom 10:05:47] API: Created request_id=cmpl-255cd0b5b7814264a1aa0b3d9af7027a, seq_id=187
+INFO:     10.24.112.181:54628 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:05:47] Request 188 arrived, input tokens: 16384, pending requests: 188
+[atom 10:05:47] API: Created request_id=cmpl-46658fc503f34f6998b6c502288a742e, seq_id=188
+INFO:     10.24.112.181:54640 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:05:48] Request 189 arrived, input tokens: 16384, pending requests: 189
+[atom 10:05:48] API: Created request_id=cmpl-165a0e4376694d49ae6f7d464ba0f274, seq_id=189
+INFO:     10.24.112.181:54642 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:05:48] Request 190 arrived, input tokens: 16384, pending requests: 190
+[atom 10:05:48] API: Created request_id=cmpl-b6bfd511feed455d9ca38362f48d855f, seq_id=190
+INFO:     10.24.112.181:54652 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:05:49] Request 191 arrived, input tokens: 16384, pending requests: 191
+[atom 10:05:49] API: Created request_id=cmpl-219f96ac8e3042ae8d4f6bd52a856866, seq_id=191
+INFO:     10.24.112.181:54666 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:05:49] Request 192 arrived, input tokens: 16384, pending requests: 192
+[atom 10:05:49] API: Created request_id=cmpl-3eb6bbd33f954f7fa817d7bcb2952690, seq_id=192
+INFO:     10.24.112.181:54670 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:07:19] Request 193 arrived, input tokens: 16384, pending requests: 193
+[atom 10:07:19] API: Created request_id=cmpl-017adb47f44f41818be07593995eb70e, seq_id=193
+INFO:     10.24.112.181:57664 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:07:19] Request 194 arrived, input tokens: 16384, pending requests: 194
+[atom 10:07:19] API: Created request_id=cmpl-faffc0865fce493680e8b0c7f903fa74, seq_id=194
+INFO:     10.24.112.181:57672 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:07:20] Request 195 arrived, input tokens: 16384, pending requests: 195
+[atom 10:07:20] API: Created request_id=cmpl-3ed8380fa56b4de4a16d5a685a9bba5e, seq_id=195
+INFO:     10.24.112.181:57674 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:07:20] Request 196 arrived, input tokens: 16384, pending requests: 196
+[atom 10:07:20] API: Created request_id=cmpl-a332514d7af340e88ca134a0cc3a6237, seq_id=196
+INFO:     10.24.112.181:57684 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:07:21] Request 197 arrived, input tokens: 16384, pending requests: 197
+[atom 10:07:21] API: Created request_id=cmpl-edc7a31fb74e41bd99daae900e48a790, seq_id=197
+INFO:     10.24.112.181:57692 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:07:21] Request 198 arrived, input tokens: 16384, pending requests: 198
+[atom 10:07:21] API: Created request_id=cmpl-8a8c1f82bea24383aaf326fb1e22832d, seq_id=198
+INFO:     10.24.112.181:58760 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:07:22] Request 199 arrived, input tokens: 16384, pending requests: 199
+[atom 10:07:22] API: Created request_id=cmpl-4e27f0107a8845ec993d63838a8a8c32, seq_id=199
+INFO:     10.24.112.181:58764 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:07:22] Request 200 arrived, input tokens: 16384, pending requests: 200
+[atom 10:07:22] API: Created request_id=cmpl-70e4d3600f614454b92aa9d22e689a65, seq_id=200
+INFO:     10.24.112.181:58778 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:07:23] Request 201 arrived, input tokens: 16384, pending requests: 201
+[atom 10:07:23] API: Created request_id=cmpl-fc357878df334358a54c6d5960720755, seq_id=201
+INFO:     10.24.112.181:58782 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:07:23] Request 202 arrived, input tokens: 16384, pending requests: 202
+[atom 10:07:23] API: Created request_id=cmpl-68c4148374bf45df9817b365cccc68b1, seq_id=202
+INFO:     10.24.112.181:58794 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:07:24] Request 203 arrived, input tokens: 16384, pending requests: 203
+[atom 10:07:24] API: Created request_id=cmpl-2f48348ee74a43ae94318e4017115aec, seq_id=203
+INFO:     10.24.112.181:58810 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:07:24] Request 204 arrived, input tokens: 16384, pending requests: 204
+[atom 10:07:24] API: Created request_id=cmpl-84fdbee8f71b4f5d86c934beec9c69b5, seq_id=204
+INFO:     10.24.112.181:58814 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:07:25] Request 205 arrived, input tokens: 16384, pending requests: 205
+[atom 10:07:25] API: Created request_id=cmpl-8c39c0923636460b972f816d7b148a2c, seq_id=205
+INFO:     10.24.112.181:58818 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:07:25] Request 206 arrived, input tokens: 16384, pending requests: 206
+[atom 10:07:25] API: Created request_id=cmpl-3fda6db801374e308c9a67b4b285febd, seq_id=206
+INFO:     10.24.112.181:58826 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:07:26] Request 207 arrived, input tokens: 16384, pending requests: 207
+[atom 10:07:26] API: Created request_id=cmpl-52b9699572a54f96b02d7e2d5f96e5a5, seq_id=207
+INFO:     10.24.112.181:58834 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:07:26] Request 208 arrived, input tokens: 16384, pending requests: 208
+[atom 10:07:26] API: Created request_id=cmpl-02241999389948f9a913b5ad5bac5abf, seq_id=208
+INFO:     10.24.112.181:58846 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:07:27] Request 209 arrived, input tokens: 16384, pending requests: 209
+[atom 10:07:27] API: Created request_id=cmpl-d9f97d06520d4b689480c1ff5e42a77b, seq_id=209
+INFO:     10.24.112.181:58848 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:07:27] Request 210 arrived, input tokens: 16384, pending requests: 210
+[atom 10:07:27] API: Created request_id=cmpl-55c4a60988b049fd8a7685fb4db9e089, seq_id=210
+INFO:     10.24.112.181:58852 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:07:28] Request 211 arrived, input tokens: 16384, pending requests: 211
+[atom 10:07:28] API: Created request_id=cmpl-1397205b633f42c2867e80d463116696, seq_id=211
+INFO:     10.24.112.181:58854 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:07:28] Request 212 arrived, input tokens: 16384, pending requests: 212
+[atom 10:07:28] API: Created request_id=cmpl-4ce1bdb5b53e4078a90a188b968b743d, seq_id=212
+INFO:     10.24.112.181:58868 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:07:29] Request 213 arrived, input tokens: 16384, pending requests: 213
+[atom 10:07:29] API: Created request_id=cmpl-7d003d7930f444e0ae5047d6a34a5791, seq_id=213
+INFO:     10.24.112.181:58870 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:07:29] Request 214 arrived, input tokens: 16384, pending requests: 214
+[atom 10:07:29] API: Created request_id=cmpl-932d6bb093804e9d86be01e400d83792, seq_id=214
+INFO:     10.24.112.181:58882 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:07:30] Request 215 arrived, input tokens: 16384, pending requests: 215
+[atom 10:07:30] API: Created request_id=cmpl-c9070fb63d574762984c2839816120ee, seq_id=215
+INFO:     10.24.112.181:58898 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:07:30] Request 216 arrived, input tokens: 16384, pending requests: 216
+[atom 10:07:30] API: Created request_id=cmpl-ef65e617c4954a34a134c074482f65b7, seq_id=216
+INFO:     10.24.112.181:58908 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:07:31] Request 217 arrived, input tokens: 16384, pending requests: 217
+[atom 10:07:31] API: Created request_id=cmpl-d36a940df9d44077b5a01e2e7d06b06b, seq_id=217
+INFO:     10.24.112.181:58914 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:07:31] Request 218 arrived, input tokens: 16384, pending requests: 218
+[atom 10:07:31] API: Created request_id=cmpl-efb8210ed50c4b7287b9bba57ea07e7f, seq_id=218
+INFO:     10.24.112.181:44510 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:07:32] Request 219 arrived, input tokens: 16384, pending requests: 219
+[atom 10:07:32] API: Created request_id=cmpl-30f6ed581f4a4e04ae08172dea191ae9, seq_id=219
+INFO:     10.24.112.181:44522 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:07:32] Request 220 arrived, input tokens: 16384, pending requests: 220
+[atom 10:07:32] API: Created request_id=cmpl-d6c8b54e86574317a89249cfafbbebed, seq_id=220
+INFO:     10.24.112.181:44530 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:07:33] Request 221 arrived, input tokens: 16384, pending requests: 221
+[atom 10:07:33] API: Created request_id=cmpl-23b4c104508e4819a35565f2150a6d76, seq_id=221
+INFO:     10.24.112.181:44532 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:07:33] Request 222 arrived, input tokens: 16384, pending requests: 222
+[atom 10:07:33] API: Created request_id=cmpl-6acd28ebb78c4665b1f5f4256857764a, seq_id=222
+INFO:     10.24.112.181:44538 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:07:34] Request 223 arrived, input tokens: 16384, pending requests: 223
+[atom 10:07:34] API: Created request_id=cmpl-187c1bbae16f492ebcc826757aac4e32, seq_id=223
+INFO:     10.24.112.181:44544 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:07:34] Request 224 arrived, input tokens: 16384, pending requests: 224
+[atom 10:07:34] API: Created request_id=cmpl-719fbab158af49718bc7c2ea9578a2b7, seq_id=224
+INFO:     10.24.112.181:44558 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:07:35] Request 225 arrived, input tokens: 16384, pending requests: 225
+[atom 10:07:35] API: Created request_id=cmpl-bdd4dfa0fe164c2db1437fa10cdb255e, seq_id=225
+INFO:     10.24.112.181:44568 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:07:35] Request 226 arrived, input tokens: 16384, pending requests: 226
+[atom 10:07:35] API: Created request_id=cmpl-0fd2ce97383646bfaa775b0a0cb56273, seq_id=226
+INFO:     10.24.112.181:44570 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:07:36] Request 227 arrived, input tokens: 16384, pending requests: 227
+[atom 10:07:36] API: Created request_id=cmpl-a1c546d05b524357a28ba5d1c5acdda4, seq_id=227
+INFO:     10.24.112.181:44574 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:07:36] Request 228 arrived, input tokens: 16384, pending requests: 228
+[atom 10:07:36] API: Created request_id=cmpl-886af07a4cd54f99905e13b9ab4b18d2, seq_id=228
+INFO:     10.24.112.181:44578 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:07:37] Request 229 arrived, input tokens: 16384, pending requests: 229
+[atom 10:07:37] API: Created request_id=cmpl-4d23848022d240c59251980e15646b42, seq_id=229
+INFO:     10.24.112.181:44594 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:07:37] Request 230 arrived, input tokens: 16384, pending requests: 230
+[atom 10:07:37] API: Created request_id=cmpl-27c772b79d364e03a2ccd144001d4757, seq_id=230
+INFO:     10.24.112.181:44598 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:07:38] Request 231 arrived, input tokens: 16384, pending requests: 231
+[atom 10:07:38] API: Created request_id=cmpl-23013b7efcee44ba82073f33ec757624, seq_id=231
+INFO:     10.24.112.181:44600 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:07:38] Request 232 arrived, input tokens: 16384, pending requests: 232
+[atom 10:07:38] API: Created request_id=cmpl-da5a99c8f96a49cb92296c5f5113df20, seq_id=232
+INFO:     10.24.112.181:44614 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:07:39] Request 233 arrived, input tokens: 16384, pending requests: 233
+[atom 10:07:39] API: Created request_id=cmpl-2f54f60190584c19a9ebabdb70c088c4, seq_id=233
+INFO:     10.24.112.181:44630 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:07:39] Request 234 arrived, input tokens: 16384, pending requests: 234
+[atom 10:07:39] API: Created request_id=cmpl-9c8fc76a38ec4f2bb1917c19cfed4e07, seq_id=234
+INFO:     10.24.112.181:44646 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:07:39] Request 235 arrived, input tokens: 16384, pending requests: 235
+[atom 10:07:39] API: Created request_id=cmpl-9b36dda163af498ba5a5df121d72f951, seq_id=235
+INFO:     10.24.112.181:44654 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:07:40] Request 236 arrived, input tokens: 16384, pending requests: 236
+[atom 10:07:40] API: Created request_id=cmpl-3318910581b64e95b5b22f8335db42ef, seq_id=236
+INFO:     10.24.112.181:44670 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:07:40] Request 237 arrived, input tokens: 16384, pending requests: 237
+[atom 10:07:40] API: Created request_id=cmpl-97e61f356b524a0bb89c69c0e1bdc260, seq_id=237
+INFO:     10.24.112.181:44678 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:07:41] Request 238 arrived, input tokens: 16384, pending requests: 238
+[atom 10:07:41] API: Created request_id=cmpl-b34a01fdcea840a4867afc4cf3c9b020, seq_id=238
+INFO:     10.24.112.181:44682 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:07:41] Request 239 arrived, input tokens: 16384, pending requests: 239
+[atom 10:07:41] API: Created request_id=cmpl-e6285fac2d9c4304a10bbef4aa1e19e9, seq_id=239
+INFO:     10.24.112.181:55128 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:07:42] Request 240 arrived, input tokens: 16384, pending requests: 240
+[atom 10:07:42] API: Created request_id=cmpl-a7cb6d1b138f400c9085728216a36448, seq_id=240
+INFO:     10.24.112.181:55142 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:07:43] Request 241 arrived, input tokens: 16384, pending requests: 241
+[atom 10:07:43] API: Created request_id=cmpl-b0235cf944004d9d943074bdf0bd4a8f, seq_id=241
+INFO:     10.24.112.181:55152 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:07:43] Request 242 arrived, input tokens: 16384, pending requests: 242
+[atom 10:07:43] API: Created request_id=cmpl-8414b603b2894702b2b56d0f8acb6387, seq_id=242
+INFO:     10.24.112.181:55168 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:07:43] Request 243 arrived, input tokens: 16384, pending requests: 243
+[atom 10:07:43] API: Created request_id=cmpl-629596c7754c427381256ee3e262695c, seq_id=243
+INFO:     10.24.112.181:55176 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:07:44] Request 244 arrived, input tokens: 16384, pending requests: 244
+[atom 10:07:44] API: Created request_id=cmpl-ccb33dea57954ce39a3874fb4ea3ceaa, seq_id=244
+INFO:     10.24.112.181:55180 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:07:44] Request 245 arrived, input tokens: 16384, pending requests: 245
+[atom 10:07:44] API: Created request_id=cmpl-0f28de4644144c4e87989f08c0257f39, seq_id=245
+INFO:     10.24.112.181:55182 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:07:45] Request 246 arrived, input tokens: 16384, pending requests: 246
+[atom 10:07:45] API: Created request_id=cmpl-2c7214112b89446eb5d5b77d0baef908, seq_id=246
+INFO:     10.24.112.181:55184 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:07:45] Request 247 arrived, input tokens: 16384, pending requests: 247
+[atom 10:07:45] API: Created request_id=cmpl-403f1044d5a340d6b69fa45af77775df, seq_id=247
+INFO:     10.24.112.181:55192 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:07:46] Request 248 arrived, input tokens: 16384, pending requests: 248
+[atom 10:07:46] API: Created request_id=cmpl-ef96d7fda1c045bfb76cc86427d3bc68, seq_id=248
+INFO:     10.24.112.181:55196 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:07:46] Request 249 arrived, input tokens: 16384, pending requests: 249
+[atom 10:07:46] API: Created request_id=cmpl-b64990fa66e0435891f3ee7dc15ad116, seq_id=249
+INFO:     10.24.112.181:55208 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:07:47] Request 250 arrived, input tokens: 16384, pending requests: 250
+[atom 10:07:47] API: Created request_id=cmpl-54de123e32714e958e05f53120bdbfd6, seq_id=250
+INFO:     10.24.112.181:55224 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:07:47] Request 251 arrived, input tokens: 16384, pending requests: 251
+[atom 10:07:47] API: Created request_id=cmpl-ce3a1a15674e412ab8695622f359ab95, seq_id=251
+INFO:     10.24.112.181:55228 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:07:48] Request 252 arrived, input tokens: 16384, pending requests: 252
+[atom 10:07:48] API: Created request_id=cmpl-44fee6ed75c8443fb8bafec574e3a13c, seq_id=252
+INFO:     10.24.112.181:55236 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:07:48] Request 253 arrived, input tokens: 16384, pending requests: 253
+[atom 10:07:48] API: Created request_id=cmpl-50c558b3212b4bbb9960a6ec5c17fdaf, seq_id=253
+INFO:     10.24.112.181:55248 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:07:49] Request 254 arrived, input tokens: 16384, pending requests: 254
+[atom 10:07:49] API: Created request_id=cmpl-b0e4698a0c924264aace169fea0d501d, seq_id=254
+INFO:     10.24.112.181:55256 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:07:49] Request 255 arrived, input tokens: 16384, pending requests: 255
+[atom 10:07:49] API: Created request_id=cmpl-f59bf5a1f2994d33b2d35a63f54903fa, seq_id=255
+INFO:     10.24.112.181:55264 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:07:50] Request 256 arrived, input tokens: 16384, pending requests: 256
+[atom 10:07:50] API: Created request_id=cmpl-aafdf1b938f247ea9995886d457192d9, seq_id=256
+INFO:     10.24.112.181:55276 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:09:20] Request 257 arrived, input tokens: 16384, pending requests: 257
+[atom 10:09:20] API: Created request_id=cmpl-4a69149027424e90b665d3da35d883a9, seq_id=257
+INFO:     10.24.112.181:36526 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:09:20] Request 258 arrived, input tokens: 16384, pending requests: 258
+[atom 10:09:20] API: Created request_id=cmpl-5676241b6c3e48d2a003874c70331345, seq_id=258
+INFO:     10.24.112.181:36536 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:09:21] Request 259 arrived, input tokens: 16384, pending requests: 259
+[atom 10:09:21] API: Created request_id=cmpl-88ef0a72f2c04dfb9efa28726ccbf044, seq_id=259
+INFO:     10.24.112.181:36538 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:09:21] Request 260 arrived, input tokens: 16384, pending requests: 260
+[atom 10:09:21] API: Created request_id=cmpl-ebbb5830f13f42bfb81d7cf6cce87277, seq_id=260
+INFO:     10.24.112.181:38594 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:09:21] Request 261 arrived, input tokens: 16384, pending requests: 261
+[atom 10:09:21] API: Created request_id=cmpl-6260c13e780840089197de9f55677cc0, seq_id=261
+INFO:     10.24.112.181:38606 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:09:22] Request 262 arrived, input tokens: 16384, pending requests: 262
+[atom 10:09:22] API: Created request_id=cmpl-0758f207303c43bc9548453d7dc297e7, seq_id=262
+INFO:     10.24.112.181:38612 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:09:22] Request 263 arrived, input tokens: 16384, pending requests: 263
+[atom 10:09:22] API: Created request_id=cmpl-9bb9bfeb630b493c8923b2618627ba44, seq_id=263
+INFO:     10.24.112.181:38622 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:09:23] Request 264 arrived, input tokens: 16384, pending requests: 264
+[atom 10:09:23] API: Created request_id=cmpl-e888bef8223a495b94517bfebe193bc9, seq_id=264
+INFO:     10.24.112.181:38634 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:09:23] Request 265 arrived, input tokens: 16384, pending requests: 265
+[atom 10:09:23] API: Created request_id=cmpl-14333155e8b344e2b31942f9a97b81ce, seq_id=265
+INFO:     10.24.112.181:38644 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:09:24] Request 266 arrived, input tokens: 16384, pending requests: 266
+[atom 10:09:24] API: Created request_id=cmpl-dcc8760c84cd4732bb8c10d5ad110374, seq_id=266
+INFO:     10.24.112.181:38654 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:09:24] Request 267 arrived, input tokens: 16384, pending requests: 267
+[atom 10:09:24] API: Created request_id=cmpl-72a8cd4dfb4d451abad44f1a5fa518dc, seq_id=267
+INFO:     10.24.112.181:38656 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:09:25] Request 268 arrived, input tokens: 16384, pending requests: 268
+[atom 10:09:25] API: Created request_id=cmpl-325ab768568a416e9b6427449d152521, seq_id=268
+INFO:     10.24.112.181:38658 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:09:25] Request 269 arrived, input tokens: 16384, pending requests: 269
+[atom 10:09:25] API: Created request_id=cmpl-9b2ac63b9eb54356a947628a8e296766, seq_id=269
+INFO:     10.24.112.181:38672 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:09:26] Request 270 arrived, input tokens: 16384, pending requests: 270
+[atom 10:09:26] API: Created request_id=cmpl-b30f23e58d1e4b57b900649e8be0d9be, seq_id=270
+INFO:     10.24.112.181:38678 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:09:26] Request 271 arrived, input tokens: 16384, pending requests: 271
+[atom 10:09:26] API: Created request_id=cmpl-7453fbe984b24a2f8d0232496a3daeeb, seq_id=271
+INFO:     10.24.112.181:38690 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:09:27] Request 272 arrived, input tokens: 16384, pending requests: 272
+[atom 10:09:27] API: Created request_id=cmpl-d89f798ff1844b688abe9473d2046ed1, seq_id=272
+INFO:     10.24.112.181:38692 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:09:27] Request 273 arrived, input tokens: 16384, pending requests: 273
+[atom 10:09:27] API: Created request_id=cmpl-6e1669a8112c4888afd1e34c4b8d92d5, seq_id=273
+INFO:     10.24.112.181:38698 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:09:28] Request 274 arrived, input tokens: 16384, pending requests: 274
+[atom 10:09:28] API: Created request_id=cmpl-47cdceaff9d142eb96068334b42f747b, seq_id=274
+INFO:     10.24.112.181:38700 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:09:28] Request 275 arrived, input tokens: 16384, pending requests: 275
+[atom 10:09:28] API: Created request_id=cmpl-0cb1e5fc317d4e84bd387ec96ac5f9b4, seq_id=275
+INFO:     10.24.112.181:38712 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:09:29] Request 276 arrived, input tokens: 16384, pending requests: 276
+[atom 10:09:29] API: Created request_id=cmpl-ca9b74493aec4560a5cdbbff4cc37a1d, seq_id=276
+INFO:     10.24.112.181:38716 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:09:29] Request 277 arrived, input tokens: 16384, pending requests: 277
+[atom 10:09:29] API: Created request_id=cmpl-cb7d28c210ba41c68d77cd6dfdc93b42, seq_id=277
+INFO:     10.24.112.181:38724 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:09:30] Request 278 arrived, input tokens: 16384, pending requests: 278
+[atom 10:09:30] API: Created request_id=cmpl-35ef00d444a24c658750471971a83a90, seq_id=278
+INFO:     10.24.112.181:38730 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:09:30] Request 279 arrived, input tokens: 16384, pending requests: 279
+[atom 10:09:30] API: Created request_id=cmpl-2f38946d6496466eb681813451546e46, seq_id=279
+INFO:     10.24.112.181:38732 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:09:31] Request 280 arrived, input tokens: 16384, pending requests: 280
+[atom 10:09:31] API: Created request_id=cmpl-2228b46133fe45498074cee7da398d99, seq_id=280
+INFO:     10.24.112.181:38744 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:09:31] Request 281 arrived, input tokens: 16384, pending requests: 281
+[atom 10:09:31] API: Created request_id=cmpl-6a13e70980a644f8b9be72ab0e3f8cef, seq_id=281
+INFO:     10.24.112.181:59110 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:09:32] Request 282 arrived, input tokens: 16384, pending requests: 282
+[atom 10:09:32] API: Created request_id=cmpl-934286b6fa7c4f0d9eedff7d5dd5f449, seq_id=282
+INFO:     10.24.112.181:59116 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:09:32] Request 283 arrived, input tokens: 16384, pending requests: 283
+[atom 10:09:32] API: Created request_id=cmpl-543f993ba5094ab3ad33ba9770666aeb, seq_id=283
+INFO:     10.24.112.181:59132 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:09:33] Request 284 arrived, input tokens: 16384, pending requests: 284
+[atom 10:09:33] API: Created request_id=cmpl-3130a3724d9646859f505f8c8da775ca, seq_id=284
+INFO:     10.24.112.181:59148 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:09:33] Request 285 arrived, input tokens: 16384, pending requests: 285
+[atom 10:09:33] API: Created request_id=cmpl-385d36365cc240bbb3e0c14b480d46aa, seq_id=285
+INFO:     10.24.112.181:59160 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:09:34] Request 286 arrived, input tokens: 16384, pending requests: 286
+[atom 10:09:34] API: Created request_id=cmpl-93838fac95af4aeca6a61b16bbc82a84, seq_id=286
+INFO:     10.24.112.181:59170 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:09:34] Request 287 arrived, input tokens: 16384, pending requests: 287
+[atom 10:09:34] API: Created request_id=cmpl-1705071ce3814ffa821568e33e6a39ad, seq_id=287
+INFO:     10.24.112.181:59184 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:09:35] Request 288 arrived, input tokens: 16384, pending requests: 288
+[atom 10:09:35] API: Created request_id=cmpl-61c7504e576b46f0805b06a7fd392219, seq_id=288
+INFO:     10.24.112.181:59188 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:09:35] Request 289 arrived, input tokens: 16384, pending requests: 289
+[atom 10:09:35] API: Created request_id=cmpl-213fb58fe2944a49bcc7d23510c24095, seq_id=289
+INFO:     10.24.112.181:59200 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:09:36] Request 290 arrived, input tokens: 16384, pending requests: 290
+[atom 10:09:36] API: Created request_id=cmpl-6c6aecc3ce104ae1a7b0bfe83b0ee332, seq_id=290
+INFO:     10.24.112.181:59212 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:09:36] Request 291 arrived, input tokens: 16384, pending requests: 291
+[atom 10:09:36] API: Created request_id=cmpl-6481ba5812a74021b3fa9b95e26b4287, seq_id=291
+INFO:     10.24.112.181:59214 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:09:37] Request 292 arrived, input tokens: 16384, pending requests: 292
+[atom 10:09:37] API: Created request_id=cmpl-35d694540c074e27b710515804835d38, seq_id=292
+INFO:     10.24.112.181:59222 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:09:37] Request 293 arrived, input tokens: 16384, pending requests: 293
+[atom 10:09:37] API: Created request_id=cmpl-6ce772341c0e4857b080ace486a5ed98, seq_id=293
+INFO:     10.24.112.181:59238 - "POST /v1/completions HTTP/1.1" 200 OK
+[atom 10:09:38] Request 294 arrived, input tokens: 16384, pending requests: 294
+[atom 10:09:38] API: Created request_id=cmpl-0763fb1f852b405282b89248e01921e9, seq_id=294
+INFO:     10.24.112.181:59242 - "POST /v1/completions HTTP/1.1" 200 OK
