@@ -1,0 +1,20 @@
+SGLANG_ENABLE_SPEC_V2=1 sglang serve \
+  --trust-remote-code \
+  --model-path XiaomiMiMo/MiMo-V2.5-Pro \
+  --tp 8 \
+  --moe-runner-backend flashinfer_trtllm \
+  --attention-backend fa4 \
+  --mem-fraction-static 0.8 \
+  --max-running-requests 128 \
+  --chunked-prefill-size 16384 \
+  --swa-full-tokens-ratio 0.1 \
+  --model-loader-extra-config '{"enable_multithread_load": true, "num_threads": 64}' \
+  --speculative-algorithm EAGLE \
+  --speculative-num-steps 3 \
+  --speculative-eagle-topk 1 \
+  --speculative-num-draft-tokens 4 \
+  --enable-multi-layer-eagle \
+  --reasoning-parser mimo \
+  --tool-call-parser mimo \
+  --host 0.0.0.0 \
+  --port 30000

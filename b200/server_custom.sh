@@ -1,0 +1,45 @@
+python3 -m sglang.launch_server \
+  --model-path /raid/models/MiMo-V2.5-Pro \
+  --trust-remote-code \
+  --pp-size 1 \
+  --dp-size 2 \
+  --ep-size 16 \
+  --tp-size 16 \
+  --moe-dense-tp-size 1 \
+  --enable-dp-attention \
+  --moe-a2a-backend deepep \
+  --dist-init-addr ${LWS_LEADER_IP}:20000 \
+  --node-rank ${LWS_WORKER_INDEX} \
+  --nnodes ${LWS_GROUP_SIZE} \
+  --page-size 1 \
+  --attention-backend fa3 \
+  --quantization fp8 \
+  --mem-fraction-static 0.7 \
+  --max-running-requests 64 \
+  --cuda-graph-max-bs 64 \
+  --chunked-prefill-size 32768 \
+  --context-length 1048576 \
+  --tokenizer-worker-num 64 \
+  --disable-radix-cache \
+  --speculative-algorithm EAGLE \
+  --speculative-num-steps 3 \
+  --speculative-eagle-topk 1 \
+  --speculative-num-draft-tokens 4 \
+  --enable-multi-layer-eagle \
+  --host 0.0.0.0 \
+  --port 9001 \
+  --reasoning-parser qwen3 \
+  --tool-call-parser mimo \
+  --watchdog-timeout 3600 \
+  --model-loader-extra-config '{"enable_multithread_load":
+  "true","num_threads": 64}' \
+  --log-level-http warning \
+  --enable-cache-report \
+  --collect-tokens-histogram \
+  --enable-metrics \
+  --bucket-time-to-first-token 0.1 0.2 0.4 0.6 0.8 1 2 4 6 8 10 20
+  40 60 80 100 200 400 800 1200 1800 2400 3600 5400 7200 \
+  --bucket-e2e-request-latency 0.1 0.2 0.4 0.6 0.8 1 2 4 6 8 10 20
+  40 60 80 100 200 400 600 1200 1800 2400 3600 5400 7200 \
+  --decode-log-interval 1 \
+  --enable-metrics-for-all-schedulers --swa-full-tokens-ratio 0.3
